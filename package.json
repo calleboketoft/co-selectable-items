@@ -1,7 +1,7 @@
 {
   "name": "co-selectable-items",
-  "version": "0.0.4",
-  "main": "client/app/components/co-selectable-items/co-selectable-items-cmp.ts",
+  "version": "0.0.5",
+  "main": "client/app/components/co-selectable-items/co-selectable-items-cmp",
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
@@ -18,7 +18,8 @@
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/jspm install && ./node_modules/.bin/gulp sass",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "tsc": "tsc -p client"
   },
   "description": "Selectable items component for Angular 2",
   "jspm": {
@@ -32,8 +33,7 @@
       "typescript": "npm:typescript@^1.6.2",
       "zone.js": "npm:zone.js@^0.5.8"
     },
-    "format": "es6",
-    "main": "client/app/components/co-selectable-items/co-selectable-items-cmp.ts"
+    "format": "es6"
   },
   "devDependencies": {
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
