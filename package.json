@@ -1,5 +1,5 @@
 {
-  "name": "20151029-ng2-common-cmps",
+  "name": "co-selectable-items",
   "version": "1.0.0",
   "main": "server/server.js",
   "dependencies": {
