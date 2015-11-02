@@ -1,6 +1,6 @@
 {
   "name": "co-selectable-items",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "client/app/components/co-selectable-items/co-selectable-items-cmp.ts",
   "dependencies": {
     "compression": "^1.0.3",
