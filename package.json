@@ -1,6 +1,6 @@
 {
   "name": "co-selectable-items",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "client/app/components/co-selectable-items/co-selectable-items-cmp.ts",
   "dependencies": {
     "compression": "^1.0.3",
@@ -31,7 +31,8 @@
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "typescript": "npm:typescript@^1.6.2",
       "zone.js": "npm:zone.js@^0.5.8"
-    }
+    },
+    "format": "es6"
   },
   "devDependencies": {
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
