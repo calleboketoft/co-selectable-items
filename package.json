@@ -25,13 +25,12 @@
     "directories": {
       "baseURL": "client"
     },
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {
       "angular2": "npm:angular2@^2.0.0-alpha.45",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
+      "typescript": "npm:typescript@^1.6.2",
       "zone.js": "npm:zone.js@^0.5.8"
-    },
-    "devDependencies": {
-      "typescript": "npm:typescript@^1.6.2"
     }
   },
   "devDependencies": {
