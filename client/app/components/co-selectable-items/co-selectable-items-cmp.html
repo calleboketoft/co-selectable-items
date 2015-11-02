@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-xs-5 text-center">
+
+    <div class="card">
+      <div class="card-header">
+        <input type="text" class="form-control"
+          placeholder="Filter"
+          [ng-form-control]="selectableFilter">
+      </div>
+      <ul class="list-group list-group-flush text-left" style="height: 150px; overflow: auto;">
+        <li class="list-group-item"
+          style="cursor: pointer;"
+          *ng-for="#item of selectableItems"
+          [ng-style]="shouldHide(item, 'selectable')"
+          (click)="selectItem(item)">
+          {{ item.displayName }}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="col-xs-2 text-center">
+    <button type="button" class="btn btn-primary"
+      (click)="selectAllFiltered()">
+      &gt;&gt;
+    </button>
+    <br><br>
+    <button type="button" class="btn btn-primary"
+      (click)="unselectAllFiltered()">
+      &lt;&lt;
+    </button>
+  </div>
+
+  <div class="col-xs-5 text-center">
+
+    <div class="card">
+      <div class="card-header">
+        <input type="text" class="form-control"
+          placeholder="Filter"
+          [ng-form-control]="selectedFilter">
+      </div>
+        <ul class="list-group list-group-flush text-left" style="height: 150px; overflow: auto;">
+        <li class="list-group-item"
+          style="cursor:pointer;"
+          *ng-for="#item of selectableItems; #i = index"
+          [ng-style]="shouldHide(item, 'selected')"
+          (click)="unselectItem(item)">
+          {{ item.displayName }}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
