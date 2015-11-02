@@ -20,7 +20,7 @@
     "postinstall": "./node_modules/.bin/jspm install && ./node_modules/.bin/gulp sass",
     "start": "node server/server.js"
   },
-  "description": "20151029-ng2-common-cmps",
+  "description": "Selectable items component for Angular 2",
   "jspm": {
     "directories": {
       "baseURL": "client"
