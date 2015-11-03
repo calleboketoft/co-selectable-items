@@ -1,6 +1,6 @@
 {
   "name": "co-selectable-items",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
   "devDependencies": {
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
