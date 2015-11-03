@@ -1,6 +1,6 @@
 {
   "name": "co-selectable-items",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
   "devDependencies": {
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
@@ -15,7 +15,7 @@
     "url": ""
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/jspm install && ./node_modules/.bin/gulp sass",
+    "build": "./node_modules/.bin/jspm install && ./node_modules/.bin/gulp sass",
     "start": "node server.js",
     "tsc": "tsc -p src"
   },
