@@ -1,10 +1,8 @@
-import 'zone.js'
-import 'reflect-metadata'
-import { Component, bootstrap } from 'angular2/angular2'
+import { Component } from 'angular2/angular2'
 import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items-cmp'
 
 @Component({
-  selector: 'app',
+  selector: 'co-selectable-items-example',
   template:`
     <div class="container" style="margin-top: 25px;">
       <h3>co-selectable-items</h3>
@@ -38,4 +36,3 @@ export class AppCmp {
     ]
   }
 }
-bootstrap(AppCmp)
