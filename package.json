@@ -1,16 +1,14 @@
 {
   "name": "co-selectable-items",
   "version": "0.0.7",
-  "main": "client/app/components/co-selectable-items/co-selectable-items-cmp",
-  "dependencies": {
-    "compression": "^1.0.3",
-    "cors": "^2.5.2",
-    "jspm": "^0.16.13",
-    "loopback": "^2.22.0",
-    "loopback-boot": "^2.6.5",
-    "loopback-component-explorer": "^2.1.0",
-    "loopback-datasource-juggler": "^2.39.0",
-    "serve-favicon": "^2.0.1"
+  "main": "src/co-selectable-items/co-selectable-items-cmp",
+  "devDependencies": {
+    "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0",
+    "jspm": "^0.16.14",
+    "typescript": "^1.6.2"
   },
   "repository": {
     "type": "",
@@ -18,26 +16,20 @@
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/jspm install && ./node_modules/.bin/gulp sass",
-    "start": "node server/server.js",
-    "tsc": "tsc -p client"
+    "start": "node server.js",
+    "tsc": "tsc -p src"
   },
   "description": "Selectable items component for Angular 2",
   "jspm": {
+    "format": "cjs",
     "directories": {
-      "baseURL": "client"
+      "baseURL": "src"
     },
-    "dependencies": {},
     "devDependencies": {
       "angular2": "npm:angular2@^2.0.0-alpha.45",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "typescript": "npm:typescript@^1.6.2",
       "zone.js": "npm:zone.js@^0.5.8"
-    },
-    "format": "cjs"
-  },
-  "devDependencies": {
-    "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
-    "gulp": "^3.9.0",
-    "gulp-sass": "^2.1.0"
+    }
   }
 }

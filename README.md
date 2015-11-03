@@ -1,1 +1,1 @@
-#angular 2 common components
+# co-selectable-items

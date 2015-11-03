@@ -8,7 +8,10 @@ System.config({
   },
 
   packages: {
-    "app": {
+    "example": {
+      "defaultExtension": "ts"
+    },
+    "co-selectable-items": {
       "defaultExtension": "ts"
     }
   },
