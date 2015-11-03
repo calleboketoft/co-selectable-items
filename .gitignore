@@ -1,7 +1,6 @@
 *.log
-src/**/*.map
+src/example/**/*.map
 src/example/**/*.js
-src/co-selectable-items/**/*.js
 .DS_Store
 node_modules
 npm-debug.log

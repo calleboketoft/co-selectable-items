@@ -17,8 +17,7 @@
   "scripts": {
     "postinstall": "./node_modules/.bin/jspm install && ./node_modules/.bin/gulp sass",
     "start": "node server.js",
-    "tsc": "tsc -p src",
-    "prepublish": "npm run tsc"
+    "tsc": "tsc -p src"
   },
   "description": "Selectable items component for Angular 2",
   "jspm": {
