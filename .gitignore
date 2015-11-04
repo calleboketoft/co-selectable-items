@@ -1,8 +1,6 @@
-*.log
-src/example/**/*.map
-src/example/**/*.js
 .DS_Store
 node_modules
 npm-debug.log
+*.log
 src/jspm_packages
 src/css
