@@ -91,7 +91,7 @@ export class CoSelectableItemsCmp {
     }
 
     // subscribe to filter updates
-    this.selectableFilter.valueChanges
+    ;(<any>this.selectableFilter.valueChanges)
       .toRx()
       .subscribe((value) => {
         console.log(value)
@@ -100,7 +100,7 @@ export class CoSelectableItemsCmp {
         })
       })
 
-    this.selectedFilter.valueChanges
+    ;(<any>this.selectedFilter.valueChanges)
       .toRx()
       .subscribe((value) => {
         this.selectableItems.forEach((item) => {
