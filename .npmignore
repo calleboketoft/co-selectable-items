@@ -4,7 +4,3 @@ npm-debug.log
 *.log
 src/jspm_packages
 src/css
-
-src/**/*.js
-src/**/*.map
-src/**/*.d.ts
