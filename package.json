@@ -16,6 +16,7 @@
     "url": ""
   },
   "scripts": {
+    "postinstall": "npm run compile",
     "compile": "npm run sass && npm run tsc",
     "start": "node server.js",
     "sass": "./node_modules/.bin/gulp sass",
