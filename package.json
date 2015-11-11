@@ -16,13 +16,12 @@
     "url": ""
   },
   "scripts": {
-    "postinstall": "npm run compile",
     "compile": "npm run sass && npm run tsc",
     "start": "node server.js",
     "sass": "./node_modules/.bin/gulp sass",
     "tsc": "tsc -p src",
     "watch": "tsc -p src -w",
-    "prepublish": "npm run tsc"
+    "prepublish": "npm run compile"
   },
   "description": "Selectable items component for Angular 2"
 }

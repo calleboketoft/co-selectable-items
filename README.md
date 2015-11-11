@@ -73,6 +73,5 @@ Component HTML:
 ## Run the example code
 
 - `npm install`
-- `npm run compile`
 - `npm start`
 - navigate to `localhost:3000` in web browser
