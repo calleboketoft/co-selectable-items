@@ -11,16 +11,14 @@ import {
 @Component({
   directives: [NgFor, NgStyle, FORM_DIRECTIVES],
   selector: 'co-selectable-items',
-  styles: [
-    `
-      .list-group {
-        overflow: auto;
-      }
-      .list-group-item {
-        cursor: pointer;
-      }
-    `
-  ],
+  styles: [`
+    .list-group {
+      overflow: auto;
+    }
+    .list-group-item {
+      cursor: pointer;
+    }
+  `],
   template: `
     <div class="row">
       <div class="col-xs-5 text-center">
@@ -31,7 +29,8 @@ import {
               placeholder="Filter"
               [ng-form-control]="selectableFilter">
           </div>
-          <ul class="list-group list-group-flush text-left" [ng-style]="{'height': listHeight}">
+          <ul class="list-group list-group-flush text-left"
+            [ng-style]="{'height': listHeight}">
             <li class="list-group-item"
               *ng-for="#item of selectableItems"
               [ng-style]="shouldHide(item, 'selectable')"
@@ -63,7 +62,8 @@ import {
               placeholder="Filter"
               [ng-form-control]="selectedFilter">
           </div>
-            <ul class="list-group list-group-flush text-left" [ng-style]="{'height':listHeight}">
+            <ul class="list-group list-group-flush text-left"
+            [ng-style]="{'height':listHeight}">
             <li class="list-group-item"
               *ng-for="#item of selectableItems; #i = index"
               [ng-style]="shouldHide(item, 'selected')"
@@ -104,7 +104,6 @@ export class CoSelectableItemsCmp {
     ;(<any>this.selectableFilter.valueChanges)
       .toRx()
       .subscribe((value) => {
-        console.log(value)
         this.selectableItems.forEach((item) => {
           item.filteredOutSelectable =  !this.filterItem(item, value)
         })
