@@ -8,7 +8,8 @@ import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items
       <h3>co-selectable-items</h3>
       <co-selectable-items
         [selectable-items]="selectableItems"
-        [selected-items]="selectedItems">
+        [selected-items]="selectedItems"
+        [list-height]="'350px'">
       </co-selectable-items>
     </div>
   `,
