@@ -101,16 +101,14 @@ export class CoSelectableItemsCmp {
     }
 
     // subscribe to filter updates
-    ;(<any>this.selectableFilter.valueChanges)
-      .toRx()
+    this.selectableFilter.valueChanges
       .subscribe((value) => {
         this.selectableItems.forEach((item) => {
           item.filteredOutSelectable =  !this.filterItem(item, value)
         })
       })
 
-    ;(<any>this.selectedFilter.valueChanges)
-      .toRx()
+    this.selectedFilter.valueChanges
       .subscribe((value) => {
         this.selectableItems.forEach((item) => {
           item.filteredOutSelected = !this.filterItem(item, value)

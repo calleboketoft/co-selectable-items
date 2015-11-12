@@ -1,9 +1,9 @@
 {
   "name": "co-selectable-items",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
   "devDependencies": {
-    "angular2": "^2.0.0-alpha.45",
+    "angular2": "^2.0.0-alpha.46",
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
