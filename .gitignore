@@ -4,6 +4,7 @@ npm-debug.log
 *.log
 src/jspm_packages
 src/css
+.vscode
 
 src/**/*.js
 src/**/*.map

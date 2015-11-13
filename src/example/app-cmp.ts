@@ -3,36 +3,75 @@ import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items
 
 @Component({
   selector: 'co-selectable-items-example',
+  directives: [CoSelectableItemsCmp],
   template:`
     <div class="container" style="margin-top: 25px;">
       <h3>co-selectable-items</h3>
       <co-selectable-items
         [selectable-items]="selectableItems"
-        [selected-items]="selectedItems">
+        [selected-items]="selectedItems"
+        [list-height]="'150px'">
       </co-selectable-items>
     </div>
-  `,
-  directives: [CoSelectableItemsCmp]
+  `
 })
 export class AppCmp {
+  
   selectableItems
+  
   selectedItems
+  
   constructor () {
+    // Prepared mock data
     this.selectableItems = [
-      { refValue: { key: 'blipp', value: 'beep' },
-        displayName: 'A blipper that beeps' },
-      { refValue: { key: 'Testing', value: 'something' },
-        displayName: 'Just testing' },
-      { refValue: { key: 'Having a great', value: 'experiment going on' },
-        displayName: 'Need to get this' },
-      { refValue: { key: 'calle', value: 'tjena' },
-        displayName: 'Carl' },
-      { refValue: { key: 'asdf', value: 'tjefdsfna' },
-        displayName: 'Lasse' }
+      {
+        displayName: 'Strawberry',
+        refValue: {
+          color: 'red',
+          item: 'fruit',
+          tasty: 'yep'
+        }
+      },
+      {
+        displayName: 'Bear',
+        refValue: {
+          item: 'animal' 
+        }
+      },
+      {
+        displayName: 'Cactus',
+        refValue: { 
+          color: 'green', 
+          item: 'plant',
+          has: 'spikes'
+        }
+      },
+      {
+        displayName: 'Fire',
+        refValue: {
+          color: 'red',
+          item: 'element'
+        } 
+      },
+      {
+        displayName: 'Calle',
+        refValue: {
+          type: 'person'
+        }
+      }
     ]
+    
     this.selectedItems = [
-      { key: 'blipp', value: 'beep' },
-      { key: 'Having a great', value: 'experiment going on' }
+      { 
+        color: 'red', 
+        item: 'fruit',
+        tasty: 'yep'
+      },
+      { 
+        color: 'green', 
+        item: 'plant',
+        has: 'spikes'
+      }
     ]
   }
 }
