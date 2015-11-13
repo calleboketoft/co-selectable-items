@@ -6,6 +6,7 @@
     "angular2": "^2.0.0-alpha.45",
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
     "express": "^4.13.3",
+    "ghooks": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-sass": "^2.1.0",
     "systemjs": "^0.19.5",
@@ -16,10 +17,16 @@
     "url": ""
   },
   "scripts": {
-    "build": "./node_modules/.bin/gulp sass",
+    "build": "npm run tsc && npm run sass",
+    "sass": "./node_modules/.bin/gulp sass",
     "start": "node server.js",
     "tsc": "tsc -p src",
     "prepublish": "npm run tsc"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run build"
+    }
   },
   "description": "Selectable items component for Angular 2"
 }
