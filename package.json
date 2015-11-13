@@ -22,7 +22,7 @@
     "start": "node server.js",
     "tsc": "tsc -p src",
     "watch": "tsc -p src -w",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run build"
   },
   "config": {
     "ghooks": {
