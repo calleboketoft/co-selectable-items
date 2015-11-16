@@ -177,8 +177,4 @@ export class CoSelectableItemsCmp {
       }
     })
   }
-
-  filterSelectable ($event) {
-    console.log($event.target.value)
-  }
 }
