@@ -10,7 +10,7 @@ module.exports = function(config) {
         'test/**/*.ts'
       ],
       serveFiles: [
-        'src/co-selectable-items/*.ts'
+        'src/**/*.ts'
       ]
     },
 

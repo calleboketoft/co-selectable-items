@@ -85,21 +85,11 @@ export class CoSelectableItemsCmp {
   selectedFilter = new Control('')
 
   onInit () {
-    // Mark initially selected items with item.selected = true and v.v.
-    let selectedItemsStrs = this.selectedItems.map((selectedItem) => {
-      // Stringify for deep comparison
-      return JSON.stringify(selectedItem)
-    })
-    let selectableLength = this.selectableItems.length
-    let i
-    for (i = 0; i < selectableLength; i++) {
-      let selectableItem = this.selectableItems[i]
-      selectableItem.filteredOutSelected = false
-      selectableItem.filteredOutSelectable = false
-      let refValueStr = JSON.stringify(selectableItem.refValue)
-      selectableItem.selected = !!~selectedItemsStrs.indexOf(refValueStr)
-    }
-
+    this.initValues()
+    this.subscribeToChanges()
+  }
+  
+  subscribeToChanges () {
     // subscribe to filter updates
     this.selectableFilter.valueChanges
       .subscribe((value) => {
@@ -114,6 +104,23 @@ export class CoSelectableItemsCmp {
           item.filteredOutSelected = !this.filterItem(item, value)
         })
       })
+  }
+  
+  initValues () {
+    // Mark initially selected items with item.selected = true and v.v.
+    let selectedItemsStrs = this.selectedItems.map((selectedItem) => {
+      // Stringify for deep comparison
+      return JSON.stringify(selectedItem)
+    })
+    let selectableLength = this.selectableItems.length
+    let i
+    for (i = 0; i < selectableLength; i++) {
+      let selectableItem = this.selectableItems[i]
+      selectableItem.filteredOutSelected = false
+      selectableItem.filteredOutSelectable = false
+      let refValueStr = JSON.stringify(selectableItem.refValue)
+      selectableItem.selected = !!~selectedItemsStrs.indexOf(refValueStr)
+    }
   }
 
   filterItem (item, filterStr) {
