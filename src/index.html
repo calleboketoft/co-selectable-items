@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="../../node_modules/systemjs/dist/system.src.js"></script>
-    <script src="../../node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="../../node_modules/angular2/bundles/router.dev.js"></script>
-    <script>
-      System.config({
-        packages: {
-          'example': { defaultExtension: 'js' },
-          'co-selectable-items': { defaultExtension: 'js' }
-        }
-      })
-      System.import('example/bootstrap')
-    </script>
-    <link href="css/bootstrap.css" rel="stylesheet" />
     <title>Angular 2 ES6 App</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
   </head>
-  <body>
+  <body style="margin-top: 50px;">
     <co-selectable-items-example>Loading...</co-selectable-items-example>
+    <script src="../jspm_packages/system.js"></script>
+    <script src="../jspm.config.js"></script>
+    <script>
+      System.import('./example/bootstrap')
+    </script>
   </body>
 </html>

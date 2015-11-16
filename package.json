@@ -9,7 +9,12 @@
     "ghooks": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-sass": "^2.1.0",
-    "systemjs": "^0.19.5",
+    "jasmine-core": "^2.3.4",
+    "jspm": "^0.16.15",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-jasmine": "^0.3.6",
+    "karma-jspm": "^2.0.2",
     "typescript": "^1.6.2"
   },
   "repository": {
@@ -18,16 +23,29 @@
   },
   "scripts": {
     "build": "npm run tsc && npm run sass",
-    "sass": "./node_modules/.bin/gulp sass",
+    "postinstall": "jspm install",
+    "sass": "gulp sass",
     "start": "node server.js",
     "tsc": "tsc -p src",
     "watch": "tsc -p src -w",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test": "karma start"
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run build"
+      "pre-commit": "npm run build && npm run test"
     }
   },
-  "description": "Selectable items component for Angular 2"
+  "description": "Selectable items component for Angular 2",
+  "jspm": {
+    "configFile": "jspm.config.js",
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-alpha.46",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
+      "zone.js": "npm:zone.js@^0.5.8"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
+  }
 }

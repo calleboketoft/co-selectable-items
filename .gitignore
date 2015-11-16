@@ -2,7 +2,7 @@
 node_modules
 npm-debug.log
 *.log
-src/jspm_packages
+jspm_packages
 src/css
 .vscode
 
