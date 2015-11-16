@@ -33,7 +33,7 @@ import {
             [ng-style]="{'height': listHeight}">
             <li class="list-group-item"
               *ng-for="#item of selectableItems"
-              [ng-style]="shouldHide(item, 'selectable')"
+              [ng-style]="getDisplayStyle(item, 'selectable')"
               (click)="selectItem(item)">
               {{ item.displayName }}
             </li>
@@ -66,7 +66,7 @@ import {
             [ng-style]="{'height':listHeight}">
             <li class="list-group-item"
               *ng-for="#item of selectableItems; #i = index"
-              [ng-style]="shouldHide(item, 'selected')"
+              [ng-style]="getDisplayStyle(item, 'selected')"
               (click)="unselectItem(item)">
               {{ item.displayName }}
             </li>
@@ -88,7 +88,7 @@ export class CoSelectableItemsCmp {
     this.initValues()
     this.subscribeToChanges()
   }
-  
+
   subscribeToChanges () {
     // subscribe to filter updates
     this.selectableFilter.valueChanges
@@ -105,7 +105,7 @@ export class CoSelectableItemsCmp {
         })
       })
   }
-  
+
   initValues () {
     // Mark initially selected items with item.selected = true and v.v.
     let selectedItemsStrs = this.selectedItems.map((selectedItem) => {
@@ -132,15 +132,19 @@ export class CoSelectableItemsCmp {
 
   // TODO come up with more effective way to do this
   shouldHide (item, listType) {
-    let showStyle = {}
+    let hide = false
     let selectableAndSelected = listType === 'selectable' && item.selected
     let selectableAndFilteredOut = listType === 'selectable' && item.filteredOutSelectable
     let selectedAndNotSelected = listType === 'selected' && !item.selected
     let selectedAndFilteredOut = listType === 'selected' && item.filteredOutSelected
     if (selectableAndSelected || selectedAndNotSelected || selectableAndFilteredOut || selectedAndFilteredOut) {
-      showStyle = {'display': 'none'}
+      hide = true
     }
-    return showStyle
+    return hide
+  }
+
+  getDisplayStyle (item, listType) {
+    return this.shouldHide(item, listType) ? {'display': 'none'} : {}
   }
 
   selectItem (itemToSelect) {

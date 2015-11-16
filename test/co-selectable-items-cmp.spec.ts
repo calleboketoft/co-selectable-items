@@ -1,7 +1,6 @@
 import 'reflect-metadata'
 import 'zone.js'
-import { AppCmp } from '../src/example/app-cmp'
-import * as mocks from './mocks'
+import mocks from './mocks'
 import { CoSelectableItemsCmp } from '../src/co-selectable-items/co-selectable-items-cmp'
 
 describe('CoSelectableItemsCmp', () => {
@@ -10,16 +9,27 @@ describe('CoSelectableItemsCmp', () => {
   })
 
   it('Should initialise values as selected and vv', () => {
-    let appCmp = new AppCmp()
-    let coSelectableItemsCmp = new CoSelectableItemsCmp()
-    coSelectableItemsCmp.selectableItems = appCmp.selectableItems
-    coSelectableItemsCmp.selectedItems = appCmp.selectedItems
-    coSelectableItemsCmp.initValues()
+    let cmp = new CoSelectableItemsCmp()
+    cmp.selectableItems = mocks.initSelectable
+    cmp.selectedItems = mocks.initSelected
+    cmp.initValues()
 
-    expect(mocks.initialisedValues).toEqual(coSelectableItemsCmp.selectableItems)
+    expect(mocks.initDone).toEqual(cmp.selectableItems)
   })
 
-  // it('Should be able to filter by displayName', () => {
+  // it('Should be able to filter by displayName on exact match', () => {
+  //   expect(true).toBe(false)
+  // })
+
+  // it('Should be able to filter by displayName case insensitive', () => {
+  //   expect(true).toBe(false)
+  // })
+
+  // it('Should not filter selectable when filtering selected', () => {
+  //   expect(true).toBe(false)
+  // })
+
+  // it('Should not filter selected when filtering selectable', () => {
   //   expect(true).toBe(false)
   // })
 
