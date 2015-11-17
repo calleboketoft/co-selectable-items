@@ -49,7 +49,7 @@ import {
         </button>
         <br><br>
         <button type="button" class="btn btn-primary"
-          (click)="unselectAllFiltered()">
+          (click)="deselectAllFiltered()">
           &lt;&lt;
         </button>
       </div>
@@ -186,7 +186,7 @@ export class CoSelectableItemsCmp {
     }
   }
 
-  unselectAllFiltered () {
+  deselectAllFiltered () {
     this.selectableItems.forEach((item) => {
       if (item.selected && !item.filteredOutSelected) {
         this.deselectItem(item)

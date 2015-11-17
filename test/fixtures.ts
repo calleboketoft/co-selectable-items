@@ -294,7 +294,194 @@ function fixtures () {
         "filteredOutSelectable": false,
         "selected": false
       }
-    ]
+    ],
+
+    selectFilteredSelectable: [
+      {
+        "displayName": "Strawberry",
+        "refValue": {
+          "color": "red",
+          "item": "fruit",
+          "tasty": "yep"
+        },
+        "filteredOutSelected": false,
+        "filteredOutSelectable": false,
+        "selected": true
+      },
+      {
+        "displayName": "Bear",
+        "refValue": {
+          "item": "animal"
+        },
+        "filteredOutSelected": false,
+        "filteredOutSelectable": false,
+        "selected": true
+      },
+      {
+        "displayName": "Cactus",
+        "refValue": {
+          "color": "green",
+          "item": "plant",
+          "has": "spikes"
+        },
+        "filteredOutSelected": false,
+        "filteredOutSelectable": false,
+        "selected": true
+      },
+      {
+        "displayName": "Fire",
+        "refValue": {
+          "color": "red",
+          "item": "element"
+        },
+        "filteredOutSelected": false,
+        "filteredOutSelectable": true,
+        "selected": false
+      },
+      {
+        "displayName": "Calle",
+        "refValue": {
+          "type": "person"
+        },
+        "filteredOutSelected": false,
+        "filteredOutSelectable": false,
+        "selected": true
+      }
+    ],
+    selectFilteredSelected: [
+      {
+        color: 'red',
+        item: 'fruit',
+        tasty: 'yep'
+      },
+      {
+        color: 'green',
+        item: 'plant',
+        has: 'spikes'
+      },
+      {
+        item: 'animal'
+      },
+      {
+        type: 'person'
+      }
+    ],
+
+    deselectFilteredSelectable: [
+      {
+        "displayName": "Strawberry",
+        "refValue": {
+          "color": "red",
+          "item": "fruit",
+          "tasty": "yep"
+        },
+        "filteredOutSelected": true,
+        "filteredOutSelectable": false,
+        "selected": true
+      },
+      {
+        "displayName": "Bear",
+        "refValue": {
+          "item": "animal"
+        },
+        "filteredOutSelected": true,
+        "filteredOutSelectable": false,
+        "selected": false
+      },
+      {
+        "displayName": "Cactus",
+        "refValue": {
+          "color": "green",
+          "item": "plant",
+          "has": "spikes"
+        },
+        "filteredOutSelected": false,
+        "filteredOutSelectable": false,
+        "selected": false
+      },
+      {
+        "displayName": "Fire",
+        "refValue": {
+          "color": "red",
+          "item": "element"
+        },
+        "filteredOutSelected": true,
+        "filteredOutSelectable": false,
+        "selected": false
+      },
+      {
+        "displayName": "Calle",
+        "refValue": {
+          "type": "person"
+        },
+        "filteredOutSelected": true,
+        "filteredOutSelectable": false,
+        "selected": false
+      }
+    ],
+    deselectFilteredSelected: [
+      {
+        "color": "red",
+        "item": "fruit",
+        "tasty": "yep"
+      }
+    ],
+
+    itemSelectedNoFilter: {
+      "displayName": "Calle",
+      "refValue": {
+        "type": "person"
+      },
+      "filteredOutSelected": false,
+      "filteredOutSelectable": false,
+      "selected": true
+    },
+    itemSelectedFilteredOutSelected: {
+      "displayName": "Calle",
+      "refValue": {
+        "type": "person"
+      },
+      "filteredOutSelected": true,
+      "filteredOutSelectable": false,
+      "selected": true
+    },
+    itemSelectedFilteredOutSelectable: {
+      "displayName": "Calle",
+      "refValue": {
+        "type": "person"
+      },
+      "filteredOutSelected": false,
+      "filteredOutSelectable": true,
+      "selected": true
+    },
+
+    itemNotSelectedNoFilter: {
+      "displayName": "Calle",
+      "refValue": {
+        "type": "person"
+      },
+      "filteredOutSelected": false,
+      "filteredOutSelectable": false,
+      "selected": false
+    },
+    itemNotSelectedFilteredOutSelectable: {
+      "displayName": "Calle",
+      "refValue": {
+        "type": "person"
+      },
+      "filteredOutSelected": false,
+      "filteredOutSelectable": true,
+      "selected": false
+    },
+    itemNotSelectedFilteredOutSelected: {
+      "displayName": "Calle",
+      "refValue": {
+        "type": "person"
+      },
+      "filteredOutSelected": true,
+      "filteredOutSelectable": false,
+      "selected": false
+    }
   }
 }
 
