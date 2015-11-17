@@ -9,3 +9,5 @@ src/css
 src/**/*.js
 src/**/*.map
 src/**/*.d.ts
+test/**/*.js
+test/**/*.map

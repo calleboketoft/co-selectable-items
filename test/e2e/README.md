@@ -1,0 +1,1 @@
+doesnt matter that the tsc fails, the correct built files are generated anyway

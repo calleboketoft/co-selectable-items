@@ -26,6 +26,7 @@ import {
         <div class="card">
           <div class="card-header">
             <input type="text" class="form-control"
+              id="co-selectable-items-selectable-filter"
               placeholder="Filter"
               [ng-form-control]="selectableFilter">
           </div>
@@ -44,11 +45,13 @@ import {
 
       <div class="col-xs-2 text-center">
         <button type="button" class="btn btn-primary"
+          id="co-selectable-items-select-all"
           (click)="selectAllFiltered()">
           &gt;&gt;
         </button>
         <br><br>
         <button type="button" class="btn btn-primary"
+          id="co-selectable-items-deselect-all"
           (click)="deselectAllFiltered()">
           &lt;&lt;
         </button>
@@ -59,6 +62,7 @@ import {
         <div class="card">
           <div class="card-header">
             <input type="text" class="form-control"
+              id="co-selectable-items-selected-filter"
               placeholder="Filter"
               [ng-form-control]="selectedFilter">
           </div>

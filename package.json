@@ -15,6 +15,7 @@
     "karma-chrome-launcher": "^0.2.1",
     "karma-jasmine": "^0.3.6",
     "karma-jspm": "^2.0.2",
+    "protractor": "^2.5.1",
     "typescript": "^1.6.2"
   },
   "repository": {
@@ -22,14 +23,17 @@
     "url": ""
   },
   "scripts": {
-    "build": "npm run tsc && npm run sass",
+    "build": "npm run tsc && npm run sass && npm run tsc-e2e",
     "postinstall": "jspm install",
     "sass": "gulp sass",
     "start": "node server.js",
     "tsc": "tsc -p src",
     "watch": "tsc -p src -w",
     "prepublish": "npm run build",
-    "test": "karma start"
+    "test": "karma start",
+    "webdriver": "node_modules/protractor/bin/webdriver-manager update",
+    "tsc-e2e": "tsc -p test/e2e",
+    "e2e": "protractor protractor.conf.js"
   },
   "config": {
     "ghooks": {
