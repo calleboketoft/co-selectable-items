@@ -8,9 +8,24 @@ The component is initialised with two lists: `selectableItems`, which is the lis
 
 When selecting and deselecting items, the `selectedItems` list is modified.
 
+## Run the example code
+
+- `npm install`
+- `npm start`
+- navigate to `localhost:3000` in web browser
+
+## Run the unit and e2e tests
+
+- Run the unit tests: `npm test`
+- Run the e2e tests:
+  - Open one tab in the terminal and serve the example: `npm start`
+  - Open another terminal tab and run the protractor tests: `npm run e2e`
+
+## Concept of component
+
 An example of user roles:
 ```javascript
-// The original items returning from the server could look like this:
+// The original items from the server could look like this:
 var originalItems = [
   {
     role: 'admin'
@@ -25,8 +40,9 @@ var originalItems = [
 
 // In order to use the list of items with this component you
 // need to manually transform the list to have a displayName.
-// The display name is the string shown to the user.
-// (especially useful when needing i18n)
+// The display name is the string shown to the user
+// (especially useful when needing i18n). The actual item is
+// stored under the refValue property.
 var selectableItems = [
   {
     {
@@ -50,7 +66,7 @@ var selectableItems = [
   }
 ]
 
-// The list of selected items
+// The list of selected items, the roles that the user has.
 var selectedItems = [
   {
     role: 'basic'
@@ -69,9 +85,3 @@ Component HTML:
   [list-height]="'150px'">
 </co-selectable-items>
 ```
-
-## Run the example code
-
-- `npm install`
-- `npm start`
-- navigate to `localhost:3000` in web browser

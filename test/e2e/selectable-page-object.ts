@@ -1,6 +1,6 @@
+// globals from protractor
 declare var element:any
 declare var by:any
-declare var filters:any
 
 export class SelectablePageObject {
   public selectableFilter = element(by.id('co-selectable-items-selectable-filter'));
