@@ -7,7 +7,7 @@ module.exports = function(config) {
     jspm: {
       config: 'jspm.config.js',
       loadFiles: [
-        'test/**/*.ts'
+        'test/unit/**/*.ts'
       ],
       serveFiles: [
         'src/**/*.ts'
