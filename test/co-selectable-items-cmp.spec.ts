@@ -77,6 +77,7 @@ describe('CoSelectableItemsCmp', () => {
     expect(cmp.shouldHide(fixtures().itemSelectedNoFilter, 'selectable')).toBe(true)
     expect(cmp.shouldHide(fixtures().itemSelectedFilteredOutSelected, 'selectable')).toBe(true)
     expect(cmp.shouldHide(fixtures().itemSelectedFilteredOutSelectable, 'selectable')).toBe(true)
+    expect(cmp.shouldHide(fixtures().itemSelectedFilteredOutBoth, 'selectable')).toBe(true)
   })
 
   it('Should hide not-selected items from the selected list', () => {
@@ -84,6 +85,7 @@ describe('CoSelectableItemsCmp', () => {
     expect(cmp.shouldHide(fixtures().itemNotSelectedNoFilter, 'selected')).toBe(true)
     expect(cmp.shouldHide(fixtures().itemNotSelectedFilteredOutSelected, 'selected')).toBe(true)
     expect(cmp.shouldHide(fixtures().itemNotSelectedFilteredOutSelectable, 'selected')).toBe(true)
+    expect(cmp.shouldHide(fixtures().itemNotSelectedFilteredOutBoth, 'selected')).toBe(true)
   })
 
   it('Should hide filtered out selectable items from the selectable list', () => {
@@ -104,6 +106,16 @@ describe('CoSelectableItemsCmp', () => {
   it('Should not hide non-filtered selected items from the selected list', () => {
     let cmp = initCmp()
     expect(cmp.shouldHide(fixtures().itemSelectedNoFilter, 'selected')).toBe(false)
+  })
+
+  it('Should not hide non-selected items with a filter for selected items from the selectable list', () => {
+    let cmp = initCmp()
+    expect(cmp.shouldHide(fixtures().itemNotSelectedFilteredOutSelected, 'selectable')).toBe(false)
+  })
+
+  it('Should not hide selected items with a filter for selectable itesm from the selected list', () => {
+    let cmp = initCmp()
+    expect(cmp.shouldHide(fixtures().itemSelectedFilteredOutSelectable, 'selected')).toBe(false)
   })
 
 })

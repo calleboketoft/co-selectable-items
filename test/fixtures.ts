@@ -454,6 +454,15 @@ function fixtures () {
       "filteredOutSelectable": true,
       "selected": true
     },
+    itemSelectedFilteredOutBoth: {
+      "displayName": "Calle",
+      "refValue": {
+        "type": "person"
+      },
+      "filteredOutSelected": true,
+      "filteredOutSelectable": true,
+      "selected": true
+    },
 
     itemNotSelectedNoFilter: {
       "displayName": "Calle",
@@ -480,6 +489,15 @@ function fixtures () {
       },
       "filteredOutSelected": true,
       "filteredOutSelectable": false,
+      "selected": false
+    },
+    itemNotSelectedFilteredOutBoth: {
+      "displayName": "Calle",
+      "refValue": {
+        "type": "person"
+      },
+      "filteredOutSelected": true,
+      "filteredOutSelectable": true,
       "selected": false
     }
   }
