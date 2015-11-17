@@ -2,12 +2,6 @@
 
 This component can be used when you have a large list of items from which you wish to select a subset to be part of another list.
 
-A typical situation would be selecting which user roles a specific user should have. Then there is a list of all roles available and a list for each user specifying which roles the user has.
-
-The component is initialised with two lists: `selectableItems`, which is the list of all the items available plus a display name, and `selectedItems`, which is the selected subset of items.
-
-When selecting and deselecting items, the `selectedItems` list is modified.
-
 ## Run the example code
 
 - `npm install`
@@ -22,6 +16,12 @@ When selecting and deselecting items, the `selectedItems` list is modified.
   - Open another terminal tab and run the protractor tests: `npm run e2e`
 
 ## Concept of component
+
+A typical situation would be selecting which user roles a specific user should have. Then there is a list of all roles available and a list for each user specifying which roles the user has.
+
+The component is initialised with two lists: `selectableItems`, which is the list of all the items available plus a display name, and `selectedItems`, which is the selected subset of items.
+
+When selecting and deselecting items, the `selectedItems` list is modified.
 
 An example of user roles:
 ```javascript
