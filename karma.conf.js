@@ -3,7 +3,7 @@
 
 module.exports = function(config) {
   config.set({
-    
+
     jspm: {
       config: 'jspm.config.js',
       loadFiles: [
@@ -21,8 +21,8 @@ module.exports = function(config) {
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jspm', 'jasmine'],
-    
-    
+
+
     proxies: {
       '/src/': '/base/src/',
       '/test/': '/base/test/',

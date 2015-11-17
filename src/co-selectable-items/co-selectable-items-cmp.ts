@@ -93,17 +93,25 @@ export class CoSelectableItemsCmp {
     // subscribe to filter updates
     this.selectableFilter.valueChanges
       .subscribe((value) => {
-        this.selectableItems.forEach((item) => {
-          item.filteredOutSelectable =  !this.filterItem(item, value)
-        })
+        this.filterSelectable(this.selectableItems, value)
       })
 
     this.selectedFilter.valueChanges
       .subscribe((value) => {
-        this.selectableItems.forEach((item) => {
-          item.filteredOutSelected = !this.filterItem(item, value)
-        })
+        this.filterSelected(this.selectableItems, value)
       })
+  }
+
+  filterSelectable (items, value) {
+    items.forEach((item) => {
+      item.filteredOutSelectable =  !this.filterItem(item.displayName, value)
+    })
+  }
+
+  filterSelected (items, value) {
+    items.forEach((item) => {
+      item.filteredOutSelected = !this.filterItem(item.displayName, value)
+    })
   }
 
   initValues () {
@@ -123,11 +131,11 @@ export class CoSelectableItemsCmp {
     }
   }
 
-  filterItem (item, filterStr) {
+  filterItem (itemStr, filterStr) {
     // TODO this filter could be greatly improved
-    let displayNameLc = item.displayName.toLowerCase()
+    let itemStrLc = itemStr.toLowerCase()
     let filterStrLc = filterStr.toLowerCase()
-    return displayNameLc.indexOf(filterStrLc) !== -1
+    return itemStrLc.indexOf(filterStrLc) !== -1
   }
 
   // TODO come up with more effective way to do this
@@ -144,7 +152,11 @@ export class CoSelectableItemsCmp {
   }
 
   getDisplayStyle (item, listType) {
-    return this.shouldHide(item, listType) ? {'display': 'none'} : {}
+    let displayStyle = {}
+    if (this.shouldHide(item, listType)) {
+      displayStyle = {'display': 'none'}
+    }
+    return displayStyle
   }
 
   selectItem (itemToSelect) {
@@ -160,7 +172,7 @@ export class CoSelectableItemsCmp {
     })
   }
 
-  unselectItem (itemToUnselect) {
+  deselectItem (itemToUnselect) {
     itemToUnselect.selected = false
     let unselectRefValueStr = JSON.stringify(itemToUnselect.refValue)
     let selectedLength = this.selectedItems.length
@@ -177,7 +189,7 @@ export class CoSelectableItemsCmp {
   unselectAllFiltered () {
     this.selectableItems.forEach((item) => {
       if (item.selected && !item.filteredOutSelected) {
-        this.unselectItem(item)
+        this.deselectItem(item)
       }
     })
   }

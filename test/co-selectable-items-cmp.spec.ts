@@ -1,6 +1,6 @@
 import 'reflect-metadata'
 import 'zone.js'
-import mocks from './mocks'
+import fixtures from './fixtures'
 import { CoSelectableItemsCmp } from '../src/co-selectable-items/co-selectable-items-cmp'
 
 describe('CoSelectableItemsCmp', () => {
@@ -9,37 +9,50 @@ describe('CoSelectableItemsCmp', () => {
   })
 
   it('Should initialise values as selected and vv', () => {
-    let cmp = new CoSelectableItemsCmp()
-    cmp.selectableItems = mocks.initSelectable
-    cmp.selectedItems = mocks.initSelected
-    cmp.initValues()
-
-    expect(mocks.initDone).toEqual(cmp.selectableItems)
+    let cmp = initCmp()
+    expect(fixtures().initDone).toEqual(cmp.selectableItems)
   })
 
-  // it('Should be able to filter by displayName on exact match', () => {
-  //   expect(true).toBe(false)
-  // })
+  it('Should be able to filter on exact partial match', () => {
+    let cmp = new CoSelectableItemsCmp()
+    let matched = cmp.filterItem('SomeString', 'Some')
+    expect(matched).toBe(true)
+  })
 
-  // it('Should be able to filter by displayName case insensitive', () => {
-  //   expect(true).toBe(false)
-  // })
+  it('Should be able to filter on case insensitive match', () => {
+    let cmp = new CoSelectableItemsCmp()
+    let matched = cmp.filterItem('SomeString', 'so')
+    expect(matched).toBe(true)
+  })
 
-  // it('Should not filter selectable when filtering selected', () => {
-  //   expect(true).toBe(false)
-  // })
+  it('Should not hide selectable when filtering selected', () => {
+    let cmp = new CoSelectableItemsCmp()
+    let selectableList = fixtures().filterIsolatedBefore
+    cmp.filterSelected(selectableList, 'Random')
+    let selectedExpected = fixtures().filterIsolatedSelectedAfter
+    expect(selectableList).toEqual(selectedExpected)
+  })
 
-  // it('Should not filter selected when filtering selectable', () => {
-  //   expect(true).toBe(false)
-  // })
+  it('Should not hide selected when filtering selectable', () => {
+    let cmp = new CoSelectableItemsCmp()
+    let selectableList = fixtures().filterIsolatedBefore
+    cmp.filterSelectable(selectableList, 'Random')
+    expect(selectableList).toEqual(fixtures().filterIsolatedSelectableAfter)
+  })
 
-  // it('Should be able to select item', () => {
-  //   expect(true).toBe(false)
-  // })
+  it('Should be able to select item', () => {
+    let cmp = initCmp()
+    cmp.selectItem(cmp.selectableItems[1])
+    expect(cmp.selectedItems).toEqual(fixtures().selectedBearSelected)
+    expect(cmp.selectableItems).toEqual(fixtures().selectedBearSelectable)
+  })
 
-  // it('Should be able to deselect item', () => {
-  //   expect(true).toBe(false)
-  // })
+  it('Should be able to deselect item', () => {
+    let cmp = initCmp()
+    cmp.deselectItem(cmp.selectableItems[2])
+    expect(cmp.selectedItems).toEqual(fixtures().deselectedCactusSelected)
+    expect(cmp.selectableItems).toEqual(fixtures().deselectedCactusSelectable)
+  })
 
   // it('Should be able to select all filtered', () => {
   //   expect(true).toBe(false)
@@ -65,3 +78,12 @@ describe('CoSelectableItemsCmp', () => {
   //   expect(true).toBe(false)
   // })
 })
+
+// Instantiate component and initialize values
+function initCmp () {
+  let cmp = new CoSelectableItemsCmp()
+  cmp.selectableItems = fixtures().initSelectable
+  cmp.selectedItems = fixtures().initSelected
+  cmp.initValues()
+  return cmp
+}
