@@ -10,10 +10,12 @@ This component can be used when you have a large list of items from which you wi
 
 ## Run the unit and e2e tests
 
-- Run the unit tests: `npm test`
+- Run the unit tests: `npm run test-unit`
 - Run the e2e tests:
-  - Open one tab in the terminal and serve the example: `npm start`
-  - Open another terminal tab and run the protractor tests: `npm run e2e`
+  - Open terminal and build the e2e tests: `npm run build`
+  - Serve the example: `npm start`
+  - Open another terminal tab and run the protractor tests: `npm run test-e2e`
+- Running both unit and e2e tests at once is done by serving the example and running `npm test`
 
 ## Concept of component
 

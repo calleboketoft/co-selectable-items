@@ -38,7 +38,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run build && npm run test"
+      "pre-commit": "npm run build && npm run test-unit"
     }
   },
   "description": "Selectable items component for Angular 2",
