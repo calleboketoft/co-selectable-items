@@ -8,12 +8,12 @@ describe('CoSelectableItemsCmp', () => {
     expect(CoSelectableItemsCmp).toBeDefined()
   })
 
-  it('Should initialise values as selected and vv', () => {
+  it('Should initialise values correctly', () => {
     let cmp = initCmp()
     expect(fixtures().initDone).toEqual(cmp.selectableItems)
   })
 
-  it('Should initialise values if object properties are ordered differently', () => {
+  it('Should initialise values correctly even if object properties are ordered differently', () => {
     let cmp = initCmp(null, fixtures().initSelectedDifferentPropOrder)
     expect(fixtures().initDone).toEqual(cmp.selectableItems)
   })
@@ -24,7 +24,7 @@ describe('CoSelectableItemsCmp', () => {
     expect(matched).toBe(true)
   })
 
-  it('Should be able to filter on case insensitive match', () => {
+  it('Should be able to filter on case insensitive partial match', () => {
     let cmp = new CoSelectableItemsCmp()
     let matched = cmp.filterItem('SomeString', 'so')
     expect(matched).toBe(true)
@@ -126,7 +126,7 @@ describe('CoSelectableItemsCmp', () => {
 })
 
 // Instantiate component and initialize values
-function initCmp (selectable, selected) {
+function initCmp (selectable?, selected?) {
   let cmp = new CoSelectableItemsCmp()
   cmp.selectableItems = selectable || fixtures().initSelectable
   cmp.selectedItems = selected || fixtures().initSelected
