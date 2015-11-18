@@ -1,6 +1,6 @@
 {
   "name": "co-selectable-items",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
   "devDependencies": {
     "angular2": "^2.0.0-alpha.46",
@@ -45,12 +45,10 @@
   "description": "Selectable items component for Angular 2",
   "jspm": {
     "configFile": "jspm.config.js",
-    "dependencies": {
+    "devDependencies": {
       "angular2": "npm:angular2@^2.0.0-alpha.46",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
-      "zone.js": "npm:zone.js@^0.5.8"
-    },
-    "devDependencies": {
+      "zone.js": "npm:zone.js@^0.5.8",
       "typescript": "npm:typescript@^1.6.2"
     }
   }
