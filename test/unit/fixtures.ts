@@ -51,6 +51,19 @@ function fixtures () {
       }
     ],
 
+    initSelectedDifferentPropOrder: [
+      {
+        tasty: 'yep',
+        color: 'red',
+        item: 'fruit'
+      },
+      {
+        item: 'plant',
+        color: 'green',
+        has: 'spikes'
+      }
+    ],
+
     initDone: [
       {
         "displayName": "Strawberry",

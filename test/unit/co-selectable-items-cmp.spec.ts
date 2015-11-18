@@ -13,6 +13,11 @@ describe('CoSelectableItemsCmp', () => {
     expect(fixtures().initDone).toEqual(cmp.selectableItems)
   })
 
+  it('Should initialise values if object properties are ordered differently', () => {
+    let cmp = initCmp(null, fixtures().initSelectedDifferentPropOrder)
+    expect(fixtures().initDone).toEqual(cmp.selectableItems)
+  })
+
   it('Should be able to filter on exact partial match', () => {
     let cmp = new CoSelectableItemsCmp()
     let matched = cmp.filterItem('SomeString', 'Some')
@@ -49,6 +54,13 @@ describe('CoSelectableItemsCmp', () => {
 
   it('Should be able to deselect item', () => {
     let cmp = initCmp()
+    cmp.deselectItem(cmp.selectableItems[2])
+    expect(cmp.selectedItems).toEqual(fixtures().deselectedCactusSelected)
+    expect(cmp.selectableItems).toEqual(fixtures().deselectedCactusSelectable)
+  })
+
+  it('Should deselect item even if object properties are ordered differently', () => {
+    let cmp = initCmp(null, fixtures().initSelectedDifferentPropOrder)
     cmp.deselectItem(cmp.selectableItems[2])
     expect(cmp.selectedItems).toEqual(fixtures().deselectedCactusSelected)
     expect(cmp.selectableItems).toEqual(fixtures().deselectedCactusSelectable)
@@ -111,25 +123,13 @@ describe('CoSelectableItemsCmp', () => {
     expect(cmp.shouldHide(fixtures().itemSelectedNoFilter, 'selected')).toBe(false)
     expect(cmp.shouldHide(fixtures().itemSelectedFilteredOutSelectable, 'selected')).toBe(false)
   })
-
-  // it('Should initalise selectable and selected items if objects are exactly the same', () => {
-  //   expect(true).toBe(false)
-  // })
-
-  // it('Should initialise values if object properties are ordered differently', () => {
-  //   expect(true).toBe(false)
-  // })
-
-  // it('Should deselect values if object properties are ordered differently', () => {
-  //   expect(true).toBe(false)
-  // })
 })
 
 // Instantiate component and initialize values
-function initCmp () {
+function initCmp (selectable, selected) {
   let cmp = new CoSelectableItemsCmp()
-  cmp.selectableItems = fixtures().initSelectable
-  cmp.selectedItems = fixtures().initSelected
+  cmp.selectableItems = selectable || fixtures().initSelectable
+  cmp.selectedItems = selected || fixtures().initSelected
   cmp.initValues()
   return cmp
 }
