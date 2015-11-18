@@ -111,6 +111,18 @@ describe('CoSelectableItemsCmp', () => {
     expect(cmp.shouldHide(fixtures().itemSelectedNoFilter, 'selected')).toBe(false)
     expect(cmp.shouldHide(fixtures().itemSelectedFilteredOutSelectable, 'selected')).toBe(false)
   })
+
+  // it('Should initalise selectable and selected items if objects are exactly the same', () => {
+  //   expect(true).toBe(false)
+  // })
+
+  // it('Should initialise values if object properties are ordered differently', () => {
+  //   expect(true).toBe(false)
+  // })
+
+  // it('Should deselect values if object properties are ordered differently', () => {
+  //   expect(true).toBe(false)
+  // })
 })
 
 // Instantiate component and initialize values
