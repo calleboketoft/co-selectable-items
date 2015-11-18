@@ -26,7 +26,6 @@ System.config({
 
   map: {
     "angular2": "npm:angular2@2.0.0-alpha.46",
-    "lodash.isequal": "npm:lodash.isequal@3.0.4",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "typescript": "npm:typescript@1.6.2",
     "zone.js": "npm:zone.js@0.5.8",
@@ -219,20 +218,6 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
-    },
-    "npm:lodash._baseisequal@3.0.7": {
-      "lodash.isarray": "npm:lodash.isarray@3.0.4",
-      "lodash.istypedarray": "npm:lodash.istypedarray@3.0.2",
-      "lodash.keys": "npm:lodash.keys@3.1.2"
-    },
-    "npm:lodash.isequal@3.0.4": {
-      "lodash._baseisequal": "npm:lodash._baseisequal@3.0.7",
-      "lodash._bindcallback": "npm:lodash._bindcallback@3.0.1"
-    },
-    "npm:lodash.keys@3.1.2": {
-      "lodash._getnative": "npm:lodash._getnative@3.9.1",
-      "lodash.isarguments": "npm:lodash.isarguments@3.0.4",
-      "lodash.isarray": "npm:lodash.isarray@3.0.4"
     },
     "npm:miller-rabin@4.0.0": {
       "bn.js": "npm:bn.js@4.1.1",

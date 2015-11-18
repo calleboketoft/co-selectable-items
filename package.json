@@ -15,7 +15,6 @@
     "karma-chrome-launcher": "^0.2.1",
     "karma-jasmine": "^0.3.6",
     "karma-jspm": "^2.0.2",
-    "lodash.isequal": "^3.0.4",
     "protractor": "^3.0.0",
     "typescript": "^1.6.2"
   },
@@ -47,7 +46,6 @@
     "configFile": "jspm.config.js",
     "dependencies": {
       "angular2": "npm:angular2@^2.0.0-alpha.46",
-      "lodash.isequal": "npm:lodash.isequal@^3.0.4",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "zone.js": "npm:zone.js@^0.5.8"
     },
