@@ -17,35 +17,49 @@ describe('SelectableItems', () => {
   let pageObject: CoSelectableItemsPageObject = new CoSelectableItemsPageObject()
 
   it('should display items properly after initialisation', () => {
-    let selectableListVisibleItems = pageObject.selectableList.all(by.css('li.co-visible')).getText()
-    expect(selectableListVisibleItems).toEqual(['Bear', 'Fire', 'Calle'])
+    let expectedSelectable = ['Bear', 'Fire', 'Calle']
+    expect(pageObject.getSelectableItems().getText()).toEqual(expectedSelectable)
 
-    let selectedListVisibleItems = pageObject.selectedList.all(by.css('li.co-visible')).getText()
-    expect(selectedListVisibleItems).toEqual(['Strawberry', 'Cactus'])
+    let expectedSelected = ['Strawberry', 'Cactus']
+    expect(pageObject.getSelectedItems().getText()).toEqual(expectedSelected)
   })
 
-  // it('should be able to select a specific item', () => {
-  //   expect(true).toEqual(false)
-  // })
+  // TODO selecting by name would be 100 times better
+  it('should be able to select a specific item', () => {
+    pageObject.selectItemByIndex(0)
+    expect(pageObject.getSelectableItems().getText()).toEqual(['Fire', 'Calle'])
+  })
 
-  // it('should be able to deselect a specific item', () => {
-  //   expect(true).toEqual(false)
-  // })
+  it('should be able to deselect a specific item', () => {
+    pageObject.deselectItemByIndex(0)
+    expect(pageObject.getSelectedItems().getText()).toEqual(['Cactus'])
+  })
 
-  // it('should be able to select all without filter', () => {
-  //   expect(true).toBe(false)
-  // })
+  let expectedAll = ['Strawberry', 'Bear', 'Cactus', 'Fire', 'Calle']
 
-  // it('should be able to select all based on filter', () => {
-  //   pageObject.selectAllItems('s')
-  //   expect(true).toEqual(true)
-  // })
+  it('should be able to select all without filter', () => {
+    pageObject.selectAllItems()
+    expect(pageObject.getSelectableItems().getText()).toEqual([])
+    expect(pageObject.getSelectedItems().getText()).toEqual(expectedAll)
+  })
 
-  // it('should be able to deselect all without filter', () => {
-  //   expect(true).toBe(false)
-  // })
+  it('should be able to deselect all without filter', () => {
+    pageObject.deselectAllItems()
+    expect(pageObject.getSelectableItems().getText()).toEqual(expectedAll)
+    expect(pageObject.getSelectedItems().getText()).toEqual([])
+  })
 
-  // it('should be able to deselect all based on filter', () => {
-  //   expect(true).toEqual(false)
-  // })
+  it('should be able to select all based on filter', () => {
+    pageObject.selectAllItems('a')
+    expect(pageObject.getSelectableItems().getText()).toEqual(['Fire'])
+    let expectedSelected = ['Strawberry', 'Bear', 'Cactus', 'Calle']
+    expect(pageObject.getSelectedItems().getText()).toEqual(expectedSelected)
+  })
+
+  it('should be able to deselect all based on filter', () => {
+    pageObject.deselectAllItems('c')
+    let expectedSelectable = ['Bear', 'Cactus', 'Fire', 'Calle']
+    expect(pageObject.getSelectedItems().getText()).toEqual(['Strawberry'])
+    expect(pageObject.getSelectableItems().getText()).toEqual(expectedSelectable)
+  })
 })
