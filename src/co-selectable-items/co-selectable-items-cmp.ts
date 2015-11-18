@@ -8,6 +8,9 @@ import {
   Control
 } from 'angular2/angular2'
 
+const VISIBLE_CLASS = 'co-visible'
+const INVISIBLE_CLASS = 'co-invisible'
+
 // Selectable items component
 @Component({
   directives: [NgFor, NgClass, NgStyle, FORM_DIRECTIVES],
@@ -125,11 +128,6 @@ export class CoSelectableItemsCmp {
   }
 
   initValues () {
-    // Mark initially selected items with item.selected = true and v.v.
-    let selectedItemsStrs = this.selectedItems.map((selectedItem) => {
-      // Stringify for deep comparison
-      return JSON.stringify(selectedItem)
-    })
     let selectableLength = this.selectableItems.length
     let i
     for (i = 0; i < selectableLength; i++) {
@@ -161,9 +159,9 @@ export class CoSelectableItemsCmp {
   }
 
   getDisplayClass (item, listType) {
-    let displayClass = 'co-visible'
+    let displayClass = VISIBLE_CLASS
     if (this.shouldHide(item, listType)) {
-      displayClass = 'co-invisible'
+      displayClass = INVISIBLE_CLASS
     }
     return displayClass
   }
@@ -205,7 +203,7 @@ export class CoSelectableItemsCmp {
 
 // http://stackoverflow.com/questions/25456013/javascript-deepequal-comparison
 function deepEqual(x, y) {
-  if ((typeof x == "object" && x != null) && (typeof y == "object" && y != null)) {
+  if ((typeof x == 'object' && x != null) && (typeof y == 'object' && y != null)) {
     if (Object.keys(x).length != Object.keys(y).length)
       return false
 
