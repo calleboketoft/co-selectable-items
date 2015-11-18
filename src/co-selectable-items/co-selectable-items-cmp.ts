@@ -6,6 +6,7 @@ import {
   Input,
   Control
 } from 'angular2/angular2'
+import lodashIsEqual from 'lodash.isequal'
 
 // Selectable items component
 @Component({
@@ -71,7 +72,7 @@ import {
             <li class="list-group-item"
               *ng-for="#item of selectableItems"
               [ng-style]="getDisplayStyle(item, 'selected')"
-              (click)="unselectItem(item)">
+              (click)="deselectItem(item)">
               {{ item.displayName }}
             </li>
           </ul>
@@ -127,22 +128,21 @@ export class CoSelectableItemsCmp {
     let selectableLength = this.selectableItems.length
     let i
     for (i = 0; i < selectableLength; i++) {
-      let selectableItem = this.selectableItems[i]
+      var selectableItem = this.selectableItems[i]
       selectableItem.filteredOutSelected = false
       selectableItem.filteredOutSelectable = false
-      let refValueStr = JSON.stringify(selectableItem.refValue)
-      selectableItem.selected = !!~selectedItemsStrs.indexOf(refValueStr)
+      selectableItem.selected = this.selectedItems.some((selectedItem) => {
+        return lodashIsEqual(selectedItem, selectableItem.refValue)
+      })
     }
   }
 
   filterItem (itemStr, filterStr) {
-    // TODO this filter could be greatly improved
     let itemStrLc = itemStr.toLowerCase()
     let filterStrLc = filterStr.toLowerCase()
     return itemStrLc.indexOf(filterStrLc) !== -1
   }
 
-  // TODO come up with more effective way to do this
   shouldHide (item, listType) {
     let hide = false
     let selectableAndSelected = listType === 'selectable' && item.selected
@@ -178,12 +178,11 @@ export class CoSelectableItemsCmp {
 
   deselectItem (itemToUnselect) {
     itemToUnselect.selected = false
-    let unselectRefValueStr = JSON.stringify(itemToUnselect.refValue)
     let selectedLength = this.selectedItems.length
     let i
     for (i = 0; i < selectedLength; i++) {
-      let selectedItemStr = JSON.stringify(this.selectedItems[i])
-      if (unselectRefValueStr === selectedItemStr) {
+      let isEqual = lodashIsEqual(itemToUnselect.refValue, this.selectedItems[i])
+      if (isEqual) {
         this.selectedItems.splice(i, 1)
         return
       }
