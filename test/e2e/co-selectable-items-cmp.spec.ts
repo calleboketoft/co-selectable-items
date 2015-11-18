@@ -32,9 +32,17 @@ describe('SelectableItems', () => {
   //   expect(true).toEqual(false)
   // })
 
+  // it('should be able to select all without filter', () => {
+  //   expect(true).toBe(false)
+  // })
+
   // it('should be able to select all based on filter', () => {
   //   pageObject.selectAllItems('s')
   //   expect(true).toEqual(true)
+  // })
+
+  // it('should be able to deselect all without filter', () => {
+  //   expect(true).toBe(false)
   // })
 
   // it('should be able to deselect all based on filter', () => {
