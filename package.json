@@ -30,10 +30,11 @@
     "prepublish": "npm run build",
     "sass": "gulp sass",
     "tsc": "tsc -p src",
-    "watch": "tsc -p src -w",
+    "watch-tsc": "tsc -p src -w",
     "test-unit": "karma start",
     "webdriver": "node_modules/protractor/bin/webdriver-manager update",
     "tsc-e2e": "tsc -p test/e2e",
+    "watch-tsc-e2e": "tsc -p test/e2e -w",
     "test-e2e": "protractor protractor.conf.js"
   },
   "config": {

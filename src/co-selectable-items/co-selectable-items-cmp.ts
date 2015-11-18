@@ -1,6 +1,7 @@
 import {
   Component,
   NgFor,
+  NgClass,
   NgStyle,
   FORM_DIRECTIVES,
   Input,
@@ -9,7 +10,7 @@ import {
 
 // Selectable items component
 @Component({
-  directives: [NgFor, NgStyle, FORM_DIRECTIVES],
+  directives: [NgFor, NgClass, NgStyle, FORM_DIRECTIVES],
   selector: 'co-selectable-items',
   styles: [`
     .list-group {
@@ -17,6 +18,9 @@ import {
     }
     .list-group-item {
       cursor: pointer;
+    }
+    .co-invisible {
+      display: none;
     }
   `],
   template: `
@@ -31,10 +35,11 @@ import {
               [ng-form-control]="selectableFilter">
           </div>
           <ul class="list-group list-group-flush text-left"
+            id="co-selectable-items-selectable-list"
             [ng-style]="{'height': listHeight}">
             <li class="list-group-item"
               *ng-for="#item of selectableItems"
-              [ng-style]="getDisplayStyle(item, 'selectable')"
+              [ng-class]="getDisplayClass(item, 'selectable')"
               (click)="selectItem(item)">
               {{ item.displayName }}
             </li>
@@ -67,10 +72,11 @@ import {
               [ng-form-control]="selectedFilter">
           </div>
             <ul class="list-group list-group-flush text-left"
-            [ng-style]="{'height':listHeight}">
+              id="co-selectable-items-selected-list"
+              [ng-style]="{'height':listHeight}">
             <li class="list-group-item"
               *ng-for="#item of selectableItems"
-              [ng-style]="getDisplayStyle(item, 'selected')"
+              [ng-class]="getDisplayClass(item, 'selected')"
               (click)="deselectItem(item)">
               {{ item.displayName }}
             </li>
@@ -154,12 +160,12 @@ export class CoSelectableItemsCmp {
     return hide
   }
 
-  getDisplayStyle (item, listType) {
-    let displayStyle = {}
+  getDisplayClass (item, listType) {
+    let displayClass = 'co-visible'
     if (this.shouldHide(item, listType)) {
-      displayStyle = {'display': 'none'}
+      displayClass = 'co-invisible'
     }
-    return displayStyle
+    return displayClass
   }
 
   selectItem (itemToSelect) {
