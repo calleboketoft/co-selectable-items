@@ -1,6 +1,9 @@
 // globals from protractor
 declare var element:any
 declare var by:any
+declare var Promise:any
+
+const VISIBLE_CLASS = 'co-visible'
 
 export class CoSelectableItemsPageObject {
 
@@ -12,21 +15,21 @@ export class CoSelectableItemsPageObject {
   public selectedList = element(by.id('co-selectable-items-selected-list'));
 
   getSelectableItems() {
-    return this.selectableList.all(by.css('li.co-visible'))
+    return this.selectableList.all(by.css('li.' + VISIBLE_CLASS))
   }
 
   getSelectedItems() {
-    return this.selectedList.all(by.css('li.co-visible'))
+    return this.selectedList.all(by.css('li.' + VISIBLE_CLASS))
   }
 
-  // TODO this way of selecting items totally rely on the mocks
-  // to be in a specific order. Will break too easily...
-  selectItemByIndex(index: number) {
-    return this.getSelectableItems().get(index).click()
-  }
-
-  deselectItemByIndex(index: number) {
-    return this.getSelectedItems().get(index).click()
+  // http://stackoverflow.com/questions/27910331/using-protractor-with-loops
+  // return items that matches the filter
+  getItemsByText(items, name: string) {
+    return items.filter((elem) => {
+      return elem.getText().then((text) => {
+        return text === name
+      })
+    })
   }
 
   selectAllItems(filterString: string = '') {

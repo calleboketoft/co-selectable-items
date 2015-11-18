@@ -24,14 +24,13 @@ describe('SelectableItems', () => {
     expect(pageObject.getSelectedItems().getText()).toEqual(expectedSelected)
   })
 
-  // TODO selecting by name would be 100 times better
   it('should be able to select a specific item', () => {
-    pageObject.selectItemByIndex(0)
+    pageObject.getItemsByText(pageObject.getSelectableItems(), 'Bear').click()
     expect(pageObject.getSelectableItems().getText()).toEqual(['Fire', 'Calle'])
   })
 
   it('should be able to deselect a specific item', () => {
-    pageObject.deselectItemByIndex(0)
+    pageObject.getItemsByText(pageObject.getSelectedItems(), 'Strawberry').click()
     expect(pageObject.getSelectedItems().getText()).toEqual(['Cactus'])
   })
 
