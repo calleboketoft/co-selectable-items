@@ -69,7 +69,7 @@ import {
             <ul class="list-group list-group-flush text-left"
             [ng-style]="{'height':listHeight}">
             <li class="list-group-item"
-              *ng-for="#item of selectableItems; #i = index"
+              *ng-for="#item of selectableItems"
               [ng-style]="getDisplayStyle(item, 'selected')"
               (click)="unselectItem(item)">
               {{ item.displayName }}
