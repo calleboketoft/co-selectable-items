@@ -15,13 +15,8 @@ exports.config = {
     includeStackTrace: false,
     defaultTimeoutInterval: 400000
   },
-
-  /**
-   * ng2 related configuration
-   *
-   * useAllAngular2AppRoots: tells Protractor to wait for any angular2 apps on the page instead of just the one matching
-   * `rootEl`
-   *
-   */
+  // ng2 related configuration
+  // useAllAngular2AppRoots: tells Protractor to wait for any angular2 apps on
+  // the page instead of just the one matching `rootEl`
   useAllAngular2AppRoots: true
 };
