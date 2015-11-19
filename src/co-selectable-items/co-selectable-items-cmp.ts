@@ -91,8 +91,8 @@ const INVISIBLE_CLASS = 'co-invisible'
   `,
 })
 export class CoSelectableItemsCmp {
-  @Input() selectableItems
-  @Input() selectedItems
+  @Input() selectableItems: Array<any>
+  @Input() selectedItems: Array<any>
   @Input() listHeight
   selectableFilter = new Control('')
   selectedFilter = new Control('')
@@ -181,15 +181,13 @@ export class CoSelectableItemsCmp {
 
   deselectItem (itemToUnselect) {
     itemToUnselect.selected = false
-    let selectedLength = this.selectedItems.length
-    let i
-    for (i = 0; i < selectedLength; i++) {
-      let isEqual = deepEqual(itemToUnselect.refValue, this.selectedItems[i])
+    this.selectedItems.forEach((selectedItem, index) => {
+      let isEqual = deepEqual(itemToUnselect.refValue, selectedItem)
       if (isEqual) {
-        this.selectedItems.splice(i, 1)
+        this.selectedItems.splice(index, 1)
         return
       }
-    }
+    })
   }
 
   deselectAllFiltered () {
