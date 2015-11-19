@@ -35,7 +35,8 @@
     "webdriver": "node_modules/protractor/bin/webdriver-manager update",
     "tsc-e2e": "tsc -p test/e2e",
     "watch-tsc-e2e": "tsc -p test/e2e -w",
-    "test-e2e": "protractor protractor.conf.js"
+    "test-e2e-directly": "protractor protractor.conf.js",
+    "test-e2e": "gulp test-e2e"
   },
   "config": {
     "ghooks": {
