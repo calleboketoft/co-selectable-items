@@ -36,7 +36,7 @@
     "tsc-e2e": "tsc -p test/e2e",
     "watch-tsc-e2e": "tsc -p test/e2e -w",
     "test-e2e-directly": "protractor protractor.conf.js",
-    "test-e2e": "gulp test-e2e"
+    "test-e2e": "npm run tsc-e2e && gulp test-e2e"
   },
   "config": {
     "ghooks": {

@@ -17,22 +17,14 @@ var express = require('express')
 var http = require('http')
 var server = http.createServer(express().use(express.static(__dirname)))
 
-gulp.task('protractor-run', ['serve-files'], function (done) {
+gulp.task('protractor-run', ['serve-files'], (done) => {
   var argv = process.argv.slice(3) // forward args to protractor
   child_process.spawn(getProtractorBinary('protractor'), argv, {
     stdio: 'inherit'
   }).once('close', done)
 })
-
-gulp.task('serve-files', function (done) {
-  console.log('starting file server')
-  server.listen(3000, done)
-})
-
-gulp.task('test-e2e', ['protractor-run'], function (done) {
-  console.log('done, closing file server')
-  server.close()
-})
+gulp.task('serve-files', (done) => server.listen(3000, done))
+gulp.task('test-e2e', ['protractor-run'], (done) => server.close())
 
 function getProtractorBinary(binaryName){
   var winExt = /^win/.test(process.platform)? '.cmd' : ''
