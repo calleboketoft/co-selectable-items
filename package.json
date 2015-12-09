@@ -3,8 +3,10 @@
   "version": "0.2.1",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
   "devDependencies": {
-    "angular2": "^2.0.0-alpha.46",
+    "angular2": "^2.0.0-alpha.50",
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.13",
     "express": "^4.13.3",
     "ghooks": "^1.0.0",
     "gulp": "^3.9.0",
@@ -16,7 +18,10 @@
     "karma-jasmine": "^0.3.6",
     "karma-jspm": "^2.0.2",
     "protractor": "^3.0.0",
-    "typescript": "^1.6.2"
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-alpha.14",
+    "typescript": "^1.6.2",
+    "zone.js": "^0.5.8"
   },
   "repository": {
     "type": "",
@@ -47,7 +52,7 @@
   "jspm": {
     "configFile": "jspm.config.js",
     "devDependencies": {
-      "angular2": "npm:angular2@^2.0.0-alpha.46",
+      "angular2": "npm:angular2@^2.0.0-alpha.50",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "typescript": "npm:typescript@^1.6.2",
       "zone.js": "npm:zone.js@^0.5.8"
