@@ -5,7 +5,8 @@ import {
   NgStyle,
   FORM_DIRECTIVES,
   Input,
-  Control
+  Control,
+  OnInit
 } from 'angular2/angular2'
 
 const VISIBLE_CLASS = 'co-visible'
@@ -90,14 +91,14 @@ const INVISIBLE_CLASS = 'co-invisible'
     </div>
   `,
 })
-export class CoSelectableItemsCmp {
+export class CoSelectableItemsCmp implements OnInit {
   @Input() selectableItems: Array<any>
   @Input() selectedItems: Array<any>
   @Input() listHeight
   selectableFilter = new Control('')
   selectedFilter = new Control('')
 
-  onInit () {
+  ngOnInit () {
     this.initValues()
     this.subscribeToChanges()
   }
