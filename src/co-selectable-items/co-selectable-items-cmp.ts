@@ -36,14 +36,14 @@ const INVISIBLE_CLASS = 'co-invisible'
             <input type="text" class="form-control"
               id="co-selectable-items-selectable-filter"
               placeholder="Filter"
-              [ng-form-control]="selectableFilter">
+              [ngFormControl]="selectableFilter">
           </div>
           <ul class="list-group list-group-flush text-left"
             id="co-selectable-items-selectable-list"
-            [ng-style]="{'height': listHeight}">
+            [ngStyle]="{'height': listHeight}">
             <li class="list-group-item"
-              *ng-for="#item of selectableItems"
-              [ng-class]="getDisplayClass(item, 'selectable')"
+              *ngFor="#item of selectableItems"
+              [ngClass]="getDisplayClass(item, 'selectable')"
               (click)="selectItem(item)">
               {{ item.displayName }}
             </li>
@@ -73,14 +73,14 @@ const INVISIBLE_CLASS = 'co-invisible'
             <input type="text" class="form-control"
               id="co-selectable-items-selected-filter"
               placeholder="Filter"
-              [ng-form-control]="selectedFilter">
+              [ngFormControl]="selectedFilter">
           </div>
             <ul class="list-group list-group-flush text-left"
               id="co-selectable-items-selected-list"
-              [ng-style]="{'height':listHeight}">
+              [ngStyle]="{'height':listHeight}">
             <li class="list-group-item"
-              *ng-for="#item of selectableItems"
-              [ng-class]="getDisplayClass(item, 'selected')"
+              *ngFor="#item of selectableItems"
+              [ngClass]="getDisplayClass(item, 'selected')"
               (click)="deselectItem(item)">
               {{ item.displayName }}
             </li>

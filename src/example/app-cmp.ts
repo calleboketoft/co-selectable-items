@@ -8,19 +8,19 @@ import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items
     <div class="container" style="margin-top: 25px;">
       <h3>co-selectable-items</h3>
       <co-selectable-items
-        [selectable-items]="selectableItems"
-        [selected-items]="selectedItems"
-        [list-height]="'150px'">
+        [selectableItems]="selectableItems"
+        [selectedItems]="selectedItems"
+        [listHeight]="'150px'">
       </co-selectable-items>
     </div>
   `
 })
 export class AppCmp {
-  
+
   selectableItems
-  
+
   selectedItems
-  
+
   constructor () {
     // Prepared mock data
     this.selectableItems = [
@@ -35,13 +35,13 @@ export class AppCmp {
       {
         displayName: 'Bear',
         refValue: {
-          item: 'animal' 
+          item: 'animal'
         }
       },
       {
         displayName: 'Cactus',
-        refValue: { 
-          color: 'green', 
+        refValue: {
+          color: 'green',
           item: 'plant',
           has: 'spikes'
         }
@@ -51,7 +51,7 @@ export class AppCmp {
         refValue: {
           color: 'red',
           item: 'element'
-        } 
+        }
       },
       {
         displayName: 'Calle',
@@ -60,15 +60,15 @@ export class AppCmp {
         }
       }
     ]
-    
+
     this.selectedItems = [
-      { 
-        color: 'red', 
+      {
+        color: 'red',
         item: 'fruit',
         tasty: 'yep'
       },
-      { 
-        color: 'green', 
+      {
+        color: 'green',
         item: 'plant',
         has: 'spikes'
       }
