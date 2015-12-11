@@ -8,14 +8,12 @@ This component can be used when you have a large list of items from which you wi
 - `npm start`
 - navigate to `localhost:3000` in web browser
 
-## Run the unit and e2e tests
+## Run tests
 
-- Run the unit tests: `npm run test-unit`
-- Run the e2e tests:
-  - Open terminal and build the e2e tests: `npm run build`
-  - Serve the example: `npm start`
-  - Open another terminal tab and run the protractor tests: `npm run test-e2e`
-- Running both unit and e2e tests at once is done by serving the example `npm start` and running `npm test`
+- `npm test`
+- Only unit tests `npm run test-unit`
+- Only e2e tests `npm run test-e2e`
+
 
 ## Concept of component
 
@@ -82,8 +80,8 @@ var selectedItems = [
 Component HTML:
 ```html
 <co-selectable-items
-  [selectable-items]="selectableItems"
-  [selected-items]="selectedItems"
-  [list-height]="'150px'">
+  [selectableItems]="selectableItems"
+  [selectedItems]="selectedItems"
+  [listHeight]="'150px'">
 </co-selectable-items>
 ```
