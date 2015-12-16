@@ -3,7 +3,7 @@
   "version": "0.3.2",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
   "devDependencies": {
-    "angular2": "^2.0.0-alpha.52",
+    "angular2": "^2.0.0-beta.0",
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.13",
@@ -19,11 +19,13 @@
     "karma-jspm": "^2.0.2",
     "protractor": "^3.0.0",
     "reflect-metadata": "^0.1.2",
-    "rxjs": "^5.0.0-alpha.14",
+    "rxjs": "^5.0.0-beta.0",
     "typescript": "^1.7.3",
-    "zone.js": "^0.5.8"
+    "zone.js": "^0.5.10"
   },
-  "keywords": ["angular2"],
+  "keywords": [
+    "angular2"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/calleboketoft/co-selectable-items.git"
@@ -53,7 +55,7 @@
   "jspm": {
     "configFile": "jspm.config.js",
     "devDependencies": {
-      "angular2": "npm:angular2@^2.0.0-alpha.52",
+      "angular2": "npm:angular2@^2.0.0-beta.0",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "typescript": "npm:typescript@^1.6.2",
       "zone.js": "npm:zone.js@^0.5.8"

@@ -1,13 +1,16 @@
 import {
   Component,
+  Input,
+  OnInit
+} from 'angular2/core'
+
+import {
   NgFor,
   NgClass,
   NgStyle,
   FORM_DIRECTIVES,
-  Input,
-  Control,
-  OnInit
-} from 'angular2/angular2'
+  Control
+} from 'angular2/common'
 
 const VISIBLE_CLASS = 'co-visible'
 const INVISIBLE_CLASS = 'co-invisible'
@@ -92,18 +95,18 @@ const INVISIBLE_CLASS = 'co-invisible'
   `,
 })
 export class CoSelectableItemsCmp implements OnInit {
-  @Input() selectableItems: Array<any>
-  @Input() selectedItems: Array<any>
-  @Input() listHeight
-  selectableFilter = new Control('')
-  selectedFilter = new Control('')
+  @Input() public selectableItems: Array<any>
+  @Input() public selectedItems: Array<any>
+  @Input() public listHeight
+  public selectableFilter = new Control('')
+  public selectedFilter = new Control('')
 
-  ngOnInit () {
+  public ngOnInit () {
     this.initValues()
     this.subscribeToChanges()
   }
 
-  subscribeToChanges () {
+  public subscribeToChanges () {
     // subscribe to filter updates
     this.selectableFilter.valueChanges
       .subscribe((value) => {
@@ -116,19 +119,19 @@ export class CoSelectableItemsCmp implements OnInit {
       })
   }
 
-  filterSelectable (items, value) {
+  public filterSelectable (items, value) {
     items.forEach((item) => {
       item.filteredOutSelectable =  !this.filterItem(item.displayName, value)
     })
   }
 
-  filterSelected (items, value) {
+  public filterSelected (items, value) {
     items.forEach((item) => {
       item.filteredOutSelected = !this.filterItem(item.displayName, value)
     })
   }
 
-  initValues () {
+  public initValues () {
     let selectableLength = this.selectableItems.length
     let i
     for (i = 0; i < selectableLength; i++) {
@@ -141,13 +144,13 @@ export class CoSelectableItemsCmp implements OnInit {
     }
   }
 
-  filterItem (itemStr, filterStr) {
+  public filterItem (itemStr, filterStr) {
     let itemStrLc = itemStr.toLowerCase()
     let filterStrLc = filterStr.toLowerCase()
     return itemStrLc.indexOf(filterStrLc) !== -1
   }
 
-  shouldHide (item, listType) {
+  public shouldHide (item, listType) {
     let hide = false
     let selectableAndSelected = listType === 'selectable' && item.selected
     let selectableAndFilteredOut = listType === 'selectable' && item.filteredOutSelectable
@@ -159,7 +162,7 @@ export class CoSelectableItemsCmp implements OnInit {
     return hide
   }
 
-  getDisplayClass (item, listType) {
+  public getDisplayClass (item, listType) {
     let displayClass = VISIBLE_CLASS
     if (this.shouldHide(item, listType)) {
       displayClass = INVISIBLE_CLASS
@@ -167,12 +170,12 @@ export class CoSelectableItemsCmp implements OnInit {
     return displayClass
   }
 
-  selectItem (itemToSelect) {
+  public selectItem (itemToSelect) {
     itemToSelect.selected = true
     this.selectedItems.push(itemToSelect.refValue)
   }
 
-  selectAllFiltered () {
+  public selectAllFiltered () {
     this.selectableItems.forEach((item) => {
       if (!item.selected && !item.filteredOutSelectable) {
         this.selectItem(item)
@@ -180,7 +183,7 @@ export class CoSelectableItemsCmp implements OnInit {
     })
   }
 
-  deselectItem (itemToUnselect) {
+  public deselectItem (itemToUnselect) {
     itemToUnselect.selected = false
     this.selectedItems.forEach((selectedItem, index) => {
       let isEqual = deepEqual(itemToUnselect.refValue, selectedItem)
@@ -191,7 +194,7 @@ export class CoSelectableItemsCmp implements OnInit {
     })
   }
 
-  deselectAllFiltered () {
+  public deselectAllFiltered () {
     this.selectableItems.forEach((item) => {
       if (item.selected && !item.filteredOutSelected) {
         this.deselectItem(item)
