@@ -2,7 +2,7 @@
   "name": "co-selectable-items",
   "version": "0.3.2",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
-  "devDependencies": {
+  "dependencies": {
     "angular2": "^2.0.0-beta.0",
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
     "es6-promise": "^3.0.2",
@@ -12,15 +12,15 @@
     "gulp": "^3.9.0",
     "gulp-sass": "^2.1.0",
     "jasmine-core": "^2.3.4",
-    "jspm": "^0.16.15",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.1",
     "karma-jasmine": "^0.3.6",
-    "karma-jspm": "^2.0.2",
+    "karma-systemjs": "^0.10.0",
     "protractor": "^3.0.0",
     "reflect-metadata": "^0.1.2",
     "rxjs": "^5.0.0-beta.0",
-    "typescript": "^1.7.3",
+    "systemjs": "^0.19.9",
+    "typescript": "^1.7.5",
     "zone.js": "^0.5.10"
   },
   "keywords": [
@@ -32,13 +32,14 @@
   },
   "scripts": {
     "build": "npm run tsc && npm run sass && npm run tsc-e2e",
-    "postinstall": "jspm install && npm run webdriver",
+    "postinstall": "npm run webdriver",
     "test": "npm run test-unit && npm run test-e2e",
     "start": "node server.js",
     "prepublish": "npm run build",
     "sass": "gulp sass",
     "tsc": "tsc -p src",
     "watch-tsc": "tsc -p src -w",
+    "tsc-unit": "tsc -p test/unit",
     "test-unit": "karma start",
     "webdriver": "node_modules/protractor/bin/webdriver-manager update",
     "tsc-e2e": "tsc -p test/e2e",
@@ -51,14 +52,5 @@
       "pre-push": "npm run build && npm run test-unit"
     }
   },
-  "description": "Selectable items component for Angular 2",
-  "jspm": {
-    "configFile": "jspm.config.js",
-    "devDependencies": {
-      "angular2": "npm:angular2@^2.0.0-beta.0",
-      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
-      "typescript": "npm:typescript@^1.6.2",
-      "zone.js": "npm:zone.js@^0.5.8"
-    }
-  }
+  "description": "Selectable items component for Angular 2"
 }
