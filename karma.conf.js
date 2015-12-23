@@ -3,11 +3,12 @@ module.exports = function(config) {
   config.set({
     systemjs: {
       configFile: 'system.config.js',
+      // list of files to serve (will not automatically be loaded)
       serveFiles: [
         'src/**/*',
-        'test/**/*',
         'node_modules/**/*'
       ],
+      // list of files to insert <script> tag for
       includeFiles: [
         'node_modules/angular2/bundles/angular2-polyfills.js'
       ],
@@ -22,7 +23,7 @@ module.exports = function(config) {
     },
     // list of files / patterns to load in the browser
     files: [
-      'test/unit/*.spec.js'
+      'src/test/unit/*.spec.js'
     ],
     basePath: '',
     frameworks: ['systemjs', 'jasmine'],

@@ -4,9 +4,15 @@
   "main": "src/co-selectable-items/co-selectable-items-cmp",
   "dependencies": {
     "angular2": "^2.0.0-beta.0",
-    "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.13",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.0",
+    "systemjs": "^0.19.9",
+    "zone.js": "^0.5.10"
+  },
+  "devDependencies": {
+    "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
     "express": "^4.13.3",
     "ghooks": "^1.0.0",
     "gulp": "^3.9.0",
@@ -17,11 +23,7 @@
     "karma-jasmine": "^0.3.6",
     "karma-systemjs": "^0.10.0",
     "protractor": "^3.0.0",
-    "reflect-metadata": "^0.1.2",
-    "rxjs": "^5.0.0-beta.0",
-    "systemjs": "^0.19.9",
-    "typescript": "^1.7.5",
-    "zone.js": "^0.5.10"
+    "typescript": "^1.7.5"
   },
   "keywords": [
     "angular2"
@@ -31,21 +33,17 @@
     "url": "https://github.com/calleboketoft/co-selectable-items.git"
   },
   "scripts": {
-    "build": "npm run tsc && npm run sass && npm run tsc-e2e",
-    "postinstall": "npm run webdriver",
-    "test": "npm run test-unit && npm run test-e2e",
-    "start": "node server.js",
+    "build": "npm run tsc && npm run sass",
+    "install_webdriver": "node_modules/protractor/bin/webdriver-manager update",
+    "postinstall": "npm run install_webdriver",
     "prepublish": "npm run build",
     "sass": "gulp sass",
-    "tsc": "tsc -p src",
-    "watch-tsc": "tsc -p src -w",
-    "tsc-unit": "tsc -p test/unit",
+    "start": "node server.js",
+    "test": "npm run test-unit && npm run test-e2e",
+    "test-e2e": "npm run tsc-e2e && gulp test-e2e",
     "test-unit": "karma start",
-    "webdriver": "node_modules/protractor/bin/webdriver-manager update",
-    "tsc-e2e": "tsc -p test/e2e",
-    "watch-tsc-e2e": "tsc -p test/e2e -w",
-    "test-e2e-directly": "protractor protractor.conf.js",
-    "test-e2e": "npm run tsc-e2e && gulp test-e2e"
+    "tsc": "tsc -p src",
+    "watch": "tsc -p src -w"
   },
   "config": {
     "ghooks": {

@@ -1,5 +1,5 @@
 import fixtures from './fixtures'
-import { CoSelectableItemsCmp } from '../../src/co-selectable-items/co-selectable-items-cmp'
+import { CoSelectableItemsCmp } from '../../co-selectable-items/co-selectable-items-cmp'
 
 describe('CoSelectableItemsCmp', () => {
   it('Should be defined', () => {
