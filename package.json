@@ -40,7 +40,7 @@
     "sass": "gulp sass",
     "start": "node server.js",
     "test": "npm run test-unit && npm run test-e2e",
-    "test-e2e": "npm run tsc-e2e && gulp test-e2e",
+    "test-e2e": "npm run tsc && gulp test-e2e",
     "test-unit": "karma start",
     "tsc": "tsc -p src",
     "watch": "tsc -p src -w"
