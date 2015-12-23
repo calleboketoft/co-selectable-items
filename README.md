@@ -5,14 +5,19 @@ This component can be used when you have a large list of items from which you wi
 ## Run the example code
 
 - `npm install`
-- `npm start`
+- `npm start` serve the files
 - navigate to `localhost:3000` in web browser
 
 ## Run tests
 
 - `npm test`
-- Only unit tests `npm run test-unit`
-- Only e2e tests `npm run test-e2e`
+- `npm run test-unit` only unit tests
+- `npm run test-e2e` only e2e tests
+
+## Develop
+
+- `npm watch` starts the TypeScript compilation watcher
+- `npm start` serve the files
 
 
 ## Concept of component
