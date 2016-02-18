@@ -35,7 +35,7 @@
     "url": "https://github.com/calleboketoft/co-selectable-items.git"
   },
   "scripts": {
-    "build": "npm run tsc && npm run sass",
+    "build": "npm run typescript && npm run sass",
     "install_webdriver": "node_modules/protractor/bin/webdriver-manager update",
     "postinstall": "npm run install_webdriver",
     "prepublish": "npm run build",
