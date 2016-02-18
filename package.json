@@ -1,6 +1,6 @@
 {
   "name": "co-selectable-items",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
   "dependencies": {
     "angular2": "^2.0.0-beta.6",
