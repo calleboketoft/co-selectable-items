@@ -5,9 +5,4 @@ npm-debug.log
 jspm_packages
 src/css
 .vscode
-
-src/**/*.js
-src/**/*.map
-src/**/*.d.ts
-test/**/*.js
-test/**/*.map
+*.map
