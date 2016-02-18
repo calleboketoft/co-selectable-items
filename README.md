@@ -50,24 +50,22 @@ var originalItems = [
 // stored under the refValue property.
 var selectableItems = [
   {
-    {
-      refValue: {
-        role: 'admin'
-      },
-      displayName: 'Administrator'
+    refValue: {
+      role: 'admin'
     },
-    {
-      refValue: {
-        role: 'support'
-      },
-      displayName: 'Customer Support'
+    displayName: 'Administrator'
+  },
+  {
+    refValue: {
+      role: 'support'
     },
-    {
-      refValue: {
-        role: 'basic'
-      },
-      displayName: 'Basic User'
-    }
+    displayName: 'Customer Support'
+  },
+  {
+    refValue: {
+      role: 'basic'
+    },
+    displayName: 'Basic User'
   }
 ]
 
