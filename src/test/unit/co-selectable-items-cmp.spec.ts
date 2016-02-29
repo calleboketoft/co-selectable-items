@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/main/ambient/jasmine/jasmine.d.ts" />
+
 import {it, describe, expect} from 'angular2/testing'
 import fixtures from './fixtures'
 import { CoSelectableItemsCmp } from '../../co-selectable-items/co-selectable-items-cmp'

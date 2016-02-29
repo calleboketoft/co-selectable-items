@@ -2,6 +2,19 @@
   "name": "co-selectable-items",
   "version": "0.3.7",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
+  "scripts": {
+    "build": "npm run typescript && npm run sass",
+    "install_webdriver": "node_modules/protractor/bin/webdriver-manager update",
+    "prepublish": "npm run build",
+    "sass": "gulp sass",
+    "start": "node server.js",
+    "test": "npm run test-unit && npm run test-e2e",
+    "test-e2e": "npm run install_webdriver && npm run typescript && gulp test-e2e",
+    "test-unit": "karma start",
+    "typescript": "gulp typescript",
+    "watch": "gulp typescript:watch",
+    "typings": "typings install"
+  },
   "dependencies": {
     "angular2": "2.0.0-beta.7",
     "es6-promise": "3.1.2",
@@ -25,7 +38,8 @@
     "karma-jasmine": "0.3.7",
     "karma-systemjs": "0.12.0",
     "protractor": "3.1.1",
-    "typescript": "1.8.2"
+    "typescript": "1.8.2",
+    "typings": "^0.6.8"
   },
   "keywords": [
     "angular2"
@@ -33,18 +47,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/calleboketoft/co-selectable-items.git"
-  },
-  "scripts": {
-    "build": "npm run typescript && npm run sass",
-    "install_webdriver": "node_modules/protractor/bin/webdriver-manager update",
-    "prepublish": "npm run build",
-    "sass": "gulp sass",
-    "start": "node server.js",
-    "test": "npm run test-unit && npm run test-e2e",
-    "test-e2e": "npm run install_webdriver && npm run typescript && gulp test-e2e",
-    "test-unit": "karma start",
-    "typescript": "gulp typescript",
-    "watch": "gulp typescript:watch"
   },
   "config": {
     "ghooks": {
