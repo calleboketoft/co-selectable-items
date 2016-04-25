@@ -5,12 +5,12 @@ import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items
   selector: 'co-selectable-items-example',
   directives: [CoSelectableItemsCmp],
   template:`
-    <div class="container" style="margin-top: 25px;">
+    <div class='container' style='margin-top: 25px;'>
       <h3>co-selectable-items</h3>
       <co-selectable-items
-        [selectableItems]="selectableItems"
-        [selectedItems]="selectedItems"
-        [listHeight]="'150px'">
+        [selectableItems]='selectableItems'
+        [selectedItems]='selectedItems'
+        [listHeight]='"150px"'>
       </co-selectable-items>
     </div>
   `

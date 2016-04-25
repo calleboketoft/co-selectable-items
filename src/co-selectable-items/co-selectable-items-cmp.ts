@@ -31,23 +31,23 @@ const INVISIBLE_CLASS = 'co-invisible'
     }
   `],
   template: `
-    <div class="row">
-      <div class="col-xs-5 text-center">
+    <div class='row'>
+      <div class='col-xs-5 text-center'>
 
-        <div class="card">
-          <div class="card-header">
-            <input type="text" class="form-control"
-              id="co-selectable-items-selectable-filter"
-              placeholder="Filter"
-              [ngFormControl]="selectableFilter">
+        <div class='card'>
+          <div class='card-header'>
+            <input type='text' class='form-control'
+              id='co-selectable-items-selectable-filter'
+              placeholder='Filter'
+              [ngFormControl]='selectableFilter'>
           </div>
-          <ul class="list-group list-group-flush text-left"
-            id="co-selectable-items-selectable-list"
-            [ngStyle]="{'height': listHeight}">
-            <li class="list-group-item"
-              *ngFor="#item of selectableItems"
-              [ngClass]="getDisplayClass(item, 'selectable')"
-              (click)="selectItem(item)">
+          <ul class='list-group list-group-flush text-left'
+            id='co-selectable-items-selectable-list'
+            [ngStyle]='{"height": listHeight}'>
+            <li class='list-group-item'
+              *ngFor='#item of selectableItems'
+              [ngClass]='getDisplayClass(item, "selectable")'
+              (click)='selectItem(item)'>
               {{ item.displayName }}
             </li>
           </ul>
@@ -55,36 +55,36 @@ const INVISIBLE_CLASS = 'co-invisible'
 
       </div>
 
-      <div class="col-xs-2 text-center">
-        <button type="button" class="btn btn-primary"
-          id="co-selectable-items-select-all"
-          (click)="selectAllFiltered()">
+      <div class='col-xs-2 text-center'>
+        <button type='button' class='btn btn-primary'
+          id='co-selectable-items-select-all'
+          (click)='selectAllFiltered()'>
           &gt;&gt;
         </button>
         <br><br>
-        <button type="button" class="btn btn-primary"
-          id="co-selectable-items-deselect-all"
-          (click)="deselectAllFiltered()">
+        <button type='button' class='btn btn-primary'
+          id='co-selectable-items-deselect-all'
+          (click)='deselectAllFiltered()'>
           &lt;&lt;
         </button>
       </div>
 
-      <div class="col-xs-5 text-center">
+      <div class='col-xs-5 text-center'>
 
-        <div class="card">
-          <div class="card-header">
-            <input type="text" class="form-control"
-              id="co-selectable-items-selected-filter"
-              placeholder="Filter"
-              [ngFormControl]="selectedFilter">
+        <div class='card'>
+          <div class='card-header'>
+            <input type='text' class='form-control'
+              id='co-selectable-items-selected-filter'
+              placeholder='Filter'
+              [ngFormControl]='selectedFilter'>
           </div>
-            <ul class="list-group list-group-flush text-left"
-              id="co-selectable-items-selected-list"
-              [ngStyle]="{'height':listHeight}">
-            <li class="list-group-item"
-              *ngFor="#item of selectableItems"
-              [ngClass]="getDisplayClass(item, 'selected')"
-              (click)="deselectItem(item)">
+            <ul class='list-group list-group-flush text-left'
+              id='co-selectable-items-selected-list'
+              [ngStyle]='{"height":listHeight}'>
+            <li class='list-group-item'
+              *ngFor='#item of selectableItems'
+              [ngClass]='getDisplayClass(item, "selected")'
+              (click)='deselectItem(item)'>
               {{ item.displayName }}
             </li>
           </ul>
