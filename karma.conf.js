@@ -2,7 +2,7 @@
 module.exports = function(config) {
   config.set({
     systemjs: {
-      configFile: 'systemjs.config.js',
+      configFile: 'src/systemjs.config.js',
       // list of files to serve (will not automatically be loaded)
       serveFiles: [
         'src/**/*',

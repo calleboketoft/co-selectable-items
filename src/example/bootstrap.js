@@ -1,7 +1,5 @@
-///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>
 "use strict";
-var browser_1 = require('angular2/platform/browser');
+var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
 var app_cmp_1 = require('./app-cmp');
-browser_1.bootstrap(app_cmp_1.AppCmp);
-
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4YW1wbGUvYm9vdHN0cmFwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHVFQUF1RTs7QUFFdkUsd0JBQXdCLDJCQUN4QixDQUFDLENBRGtEO0FBQ25ELHdCQUFxQixXQUNyQixDQUFDLENBRCtCO0FBQ2hDLG1CQUFTLENBQUMsZ0JBQU0sQ0FBQyxDQUFBIiwiZmlsZSI6ImV4YW1wbGUvYm9vdHN0cmFwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8vPHJlZmVyZW5jZSBwYXRoPVwiLi4vLi4vbm9kZV9tb2R1bGVzL2FuZ3VsYXIyL3R5cGluZ3MvYnJvd3Nlci5kLnRzXCIvPlxuXG5pbXBvcnQge2Jvb3RzdHJhcH0gZnJvbSAnYW5ndWxhcjIvcGxhdGZvcm0vYnJvd3NlcidcbmltcG9ydCB7QXBwQ21wfSBmcm9tICcuL2FwcC1jbXAnXG5ib290c3RyYXAoQXBwQ21wKVxuIl0sInNvdXJjZVJvb3QiOiIvbm9kZV9tb2R1bGVzIn0=
+platform_browser_dynamic_1.bootstrap(app_cmp_1.AppCmp);
+//# sourceMappingURL=bootstrap.js.map

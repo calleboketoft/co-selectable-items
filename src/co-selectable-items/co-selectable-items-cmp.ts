@@ -2,7 +2,7 @@ import {
   Component,
   Input,
   OnInit
-} from 'angular2/core'
+} from '@angular/core'
 
 import {
   NgFor,
@@ -10,7 +10,7 @@ import {
   NgStyle,
   FORM_DIRECTIVES,
   Control
-} from 'angular2/common'
+} from '@angular/common'
 
 const VISIBLE_CLASS = 'co-visible'
 const INVISIBLE_CLASS = 'co-invisible'
@@ -45,7 +45,7 @@ const INVISIBLE_CLASS = 'co-invisible'
             id='co-selectable-items-selectable-list'
             [ngStyle]='{"height": listHeight}'>
             <li class='list-group-item'
-              *ngFor='#item of selectableItems'
+              *ngFor='let item of selectableItems'
               [ngClass]='getDisplayClass(item, "selectable")'
               (click)='selectItem(item)'>
               {{ item.displayName }}
@@ -82,7 +82,7 @@ const INVISIBLE_CLASS = 'co-invisible'
               id='co-selectable-items-selected-list'
               [ngStyle]='{"height":listHeight}'>
             <li class='list-group-item'
-              *ngFor='#item of selectableItems'
+              *ngFor='let item of selectableItems'
               [ngClass]='getDisplayClass(item, "selected")'
               (click)='deselectItem(item)'>
               {{ item.displayName }}
