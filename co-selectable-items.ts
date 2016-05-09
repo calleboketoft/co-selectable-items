@@ -1,0 +1,1 @@
+export {CoSelectableItemsCmp} from './src/co-selectable-items/co-selectable-items-cmp'
