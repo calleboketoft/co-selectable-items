@@ -19,12 +19,14 @@ var CoSelectableItemsCmp = (function () {
         this.selectedFilter = new common_1.Control('');
     }
     CoSelectableItemsCmp.prototype.ngOnInit = function () {
-        this.initValues();
-        this.subscribeToChanges();
+        this.subscribeToFilterChanges();
     };
-    CoSelectableItemsCmp.prototype.subscribeToChanges = function () {
+    CoSelectableItemsCmp.prototype.ngOnChanges = function (changes) {
+        this.initValues();
+    };
+    // subscribe to filter updates
+    CoSelectableItemsCmp.prototype.subscribeToFilterChanges = function () {
         var _this = this;
-        // subscribe to filter updates
         this.selectableFilter.valueChanges
             .subscribe(function (value) {
             _this.filterSelectable(_this.selectableItems, value);

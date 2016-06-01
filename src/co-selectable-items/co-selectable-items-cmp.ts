@@ -1,7 +1,8 @@
 import {
   Component,
   Input,
-  OnInit
+  OnInit,
+  OnChanges
 } from '@angular/core'
 
 import {
@@ -94,7 +95,7 @@ const INVISIBLE_CLASS = 'co-invisible'
     </div>
   `,
 })
-export class CoSelectableItemsCmp implements OnInit {
+export class CoSelectableItemsCmp implements OnInit, OnChanges {
   @Input() public selectableItems: Array<any>
   @Input() public selectedItems: Array<any>
   @Input() public listHeight
@@ -102,12 +103,15 @@ export class CoSelectableItemsCmp implements OnInit {
   public selectedFilter = new Control('')
 
   public ngOnInit () {
-    this.initValues()
-    this.subscribeToChanges()
+    this.subscribeToFilterChanges()
   }
 
-  public subscribeToChanges () {
-    // subscribe to filter updates
+  ngOnChanges (changes) {
+    this.initValues()
+  }
+
+  // subscribe to filter updates
+  public subscribeToFilterChanges () {
     this.selectableFilter.valueChanges
       .subscribe((value) => {
         this.filterSelectable(this.selectableItems, value)
