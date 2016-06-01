@@ -1,5 +1,5 @@
 "use strict";
-var testing_1 = require('@angular/testing');
+var testing_1 = require('@angular/core/testing');
 var fixtures_1 = require('./fixtures');
 var co_selectable_items_cmp_1 = require('../../co-selectable-items/co-selectable-items-cmp');
 testing_1.describe('CoSelectableItemsCmp', function () {
