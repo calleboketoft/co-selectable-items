@@ -36,8 +36,9 @@ const INVISIBLE_CLASS = 'co-invisible'
   `],
   template: `
     <div class='row'>
-      <div class='col-xs-5 text-center'>
 
+      <!-- SELECTABLE ITEMS -->
+      <div class='col-xs-5'>
         <div class='card'>
           <div class='card-header'>
             <input type='text' class='form-control'
@@ -52,13 +53,13 @@ const INVISIBLE_CLASS = 'co-invisible'
               *ngFor='let item of selectableItems'
               [ngClass]='getDisplayClass(item, "selectable")'
               (click)='selectItem(item)'>
-              {{ item.displayName }}
+              {{item.displayName}}
             </li>
           </ul>
         </div>
-
       </div>
 
+      <!-- BATCH BUTTONS -->
       <div class='col-xs-2 text-center'>
         <button type='button' class='btn btn-primary'
           id='co-selectable-items-select-all'
@@ -73,8 +74,8 @@ const INVISIBLE_CLASS = 'co-invisible'
         </button>
       </div>
 
-      <div class='col-xs-5 text-center'>
-
+      <!-- SELECTED ITEMS -->
+      <div class='col-xs-5'>
         <div class='card'>
           <div class='card-header'>
             <input type='text' class='form-control'
@@ -89,12 +90,12 @@ const INVISIBLE_CLASS = 'co-invisible'
               *ngFor='let item of selectableItems'
               [ngClass]='getDisplayClass(item, "selected")'
               (click)='deselectItem(item)'>
-              {{ item.displayName }}
+              {{item.displayName}}
             </li>
           </ul>
         </div>
-
       </div>
+
     </div>
   `,
 })
