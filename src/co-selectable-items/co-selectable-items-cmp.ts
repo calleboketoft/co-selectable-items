@@ -30,6 +30,9 @@ const INVISIBLE_CLASS = 'co-invisible'
     .co-invisible {
       display: none;
     }
+    .text-center {
+      text-align: center;
+    }
   `],
   template: `
     <div class='row'>
