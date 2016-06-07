@@ -67,7 +67,7 @@ var AppCmp = (function () {
         core_1.Component({
             selector: 'co-selectable-items-example',
             directives: [co_selectable_items_cmp_1.CoSelectableItemsCmp],
-            template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>co-selectable-items</h3>\n      <co-selectable-items\n        [selectableItems]='selectableItems'\n        [selectedItems]='selectedItems'\n        [listHeight]='\"150px\"'>\n      </co-selectable-items>\n    </div>\n  "
+            template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>co-selectable-items example</h3>\n      <br>\n      <co-selectable-items\n        [selectableItems]='selectableItems'\n        [selectableHeader]='\"Selectable\"'\n        [selectedItems]='selectedItems'\n        [selectedHeader]='\"Selected\"'\n        [listHeight]='\"150px\"'>\n      </co-selectable-items>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppCmp);

@@ -15,6 +15,8 @@ var INVISIBLE_CLASS = 'co-invisible';
 // Selectable items component
 var CoSelectableItemsCmp = (function () {
     function CoSelectableItemsCmp() {
+        this.selectableHeader = '';
+        this.selectedHeader = '';
         this.selectableFilter = new common_1.Control('');
         this.selectedFilter = new common_1.Control('');
     }
@@ -126,12 +128,20 @@ var CoSelectableItemsCmp = (function () {
         core_1.Input(), 
         __metadata('design:type', Object)
     ], CoSelectableItemsCmp.prototype, "listHeight", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], CoSelectableItemsCmp.prototype, "selectableHeader", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], CoSelectableItemsCmp.prototype, "selectedHeader", void 0);
     CoSelectableItemsCmp = __decorate([
         core_1.Component({
             directives: [common_1.NgFor, common_1.NgClass, common_1.NgStyle, common_1.FORM_DIRECTIVES],
             selector: 'co-selectable-items',
             styles: ["\n    .list-group {\n      overflow: auto;\n    }\n    .list-group-item {\n      cursor: pointer;\n    }\n    .co-invisible {\n      display: none;\n    }\n    .text-center {\n      text-align: center;\n    }\n  "],
-            template: "\n    <div class='row'>\n\n      <!-- SELECTABLE ITEMS -->\n      <div class='col-xs-5'>\n        <div class='card'>\n          <div class='card-header'>\n            <input type='text' class='form-control'\n              id='co-selectable-items-selectable-filter'\n              placeholder='Filter'\n              [ngFormControl]='selectableFilter'>\n          </div>\n          <ul class='list-group list-group-flush text-left'\n            id='co-selectable-items-selectable-list'\n            [ngStyle]='{\"height\": listHeight}'>\n            <li class='list-group-item'\n              *ngFor='let item of selectableItems'\n              [ngClass]='getDisplayClass(item, \"selectable\")'\n              (click)='selectItem(item)'>\n              {{item.displayName}}\n            </li>\n          </ul>\n        </div>\n      </div>\n\n      <!-- BATCH BUTTONS -->\n      <div class='col-xs-2 text-center'>\n        <button type='button' class='btn btn-primary'\n          id='co-selectable-items-select-all'\n          (click)='selectAllFiltered()'>\n          &gt;&gt;\n        </button>\n        <br><br>\n        <button type='button' class='btn btn-primary'\n          id='co-selectable-items-deselect-all'\n          (click)='deselectAllFiltered()'>\n          &lt;&lt;\n        </button>\n      </div>\n\n      <!-- SELECTED ITEMS -->\n      <div class='col-xs-5'>\n        <div class='card'>\n          <div class='card-header'>\n            <input type='text' class='form-control'\n              id='co-selectable-items-selected-filter'\n              placeholder='Filter'\n              [ngFormControl]='selectedFilter'>\n          </div>\n            <ul class='list-group list-group-flush text-left'\n              id='co-selectable-items-selected-list'\n              [ngStyle]='{\"height\":listHeight}'>\n            <li class='list-group-item'\n              *ngFor='let item of selectableItems'\n              [ngClass]='getDisplayClass(item, \"selected\")'\n              (click)='deselectItem(item)'>\n              {{item.displayName}}\n            </li>\n          </ul>\n        </div>\n      </div>\n\n    </div>\n  ",
+            template: "\n    <div class='row' *ngIf='selectableHeader || selectedHeader'>\n      <div class='col-xs-5'>\n        <h4>{{selectableHeader}}</h4>\n      </div>\n      <div class='col-xs-2'>\n      </div>\n      <div class='col-xs-5'>\n        <h4>{{selectedHeader}}</h4>\n      </div>\n    </div>\n\n    <div class='row'>\n\n      <!-- SELECTABLE ITEMS -->\n      <div class='col-xs-5'>\n        <div class='card'>\n          <div class='card-header'>\n            <input type='text' class='form-control'\n              id='co-selectable-items-selectable-filter'\n              placeholder='Filter'\n              [ngFormControl]='selectableFilter'>\n          </div>\n          <ul class='list-group list-group-flush text-left'\n            id='co-selectable-items-selectable-list'\n            [ngStyle]='{\"height\": listHeight}'>\n            <li class='list-group-item'\n              *ngFor='let item of selectableItems'\n              [ngClass]='getDisplayClass(item, \"selectable\")'\n              (click)='selectItem(item)'>\n              {{item.displayName}}\n            </li>\n          </ul>\n        </div>\n      </div>\n\n      <!-- BATCH BUTTONS -->\n      <div class='col-xs-2 text-center'>\n        <button type='button' class='btn btn-primary'\n          id='co-selectable-items-select-all'\n          (click)='selectAllFiltered()'>\n          &gt;&gt;\n        </button>\n        <br><br>\n        <button type='button' class='btn btn-primary'\n          id='co-selectable-items-deselect-all'\n          (click)='deselectAllFiltered()'>\n          &lt;&lt;\n        </button>\n      </div>\n\n      <!-- SELECTED ITEMS -->\n      <div class='col-xs-5'>\n        <div class='card'>\n          <div class='card-header'>\n            <input type='text' class='form-control'\n              id='co-selectable-items-selected-filter'\n              placeholder='Filter'\n              [ngFormControl]='selectedFilter'>\n          </div>\n            <ul class='list-group list-group-flush text-left'\n              id='co-selectable-items-selected-list'\n              [ngStyle]='{\"height\":listHeight}'>\n            <li class='list-group-item'\n              *ngFor='let item of selectableItems'\n              [ngClass]='getDisplayClass(item, \"selected\")'\n              (click)='deselectItem(item)'>\n              {{item.displayName}}\n            </li>\n          </ul>\n        </div>\n      </div>\n\n    </div>\n  ",
         }), 
         __metadata('design:paramtypes', [])
     ], CoSelectableItemsCmp);

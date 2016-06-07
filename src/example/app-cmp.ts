@@ -6,10 +6,13 @@ import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items
   directives: [CoSelectableItemsCmp],
   template:`
     <div class='container' style='margin-top: 25px;'>
-      <h3>co-selectable-items</h3>
+      <h3>co-selectable-items example</h3>
+      <br>
       <co-selectable-items
         [selectableItems]='selectableItems'
+        [selectableHeader]='"Selectable"'
         [selectedItems]='selectedItems'
+        [selectedHeader]='"Selected"'
         [listHeight]='"150px"'>
       </co-selectable-items>
     </div>

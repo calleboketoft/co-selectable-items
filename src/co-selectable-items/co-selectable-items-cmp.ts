@@ -35,6 +35,17 @@ const INVISIBLE_CLASS = 'co-invisible'
     }
   `],
   template: `
+    <div class='row' *ngIf='selectableHeader || selectedHeader'>
+      <div class='col-xs-5'>
+        <h4>{{selectableHeader}}</h4>
+      </div>
+      <div class='col-xs-2'>
+      </div>
+      <div class='col-xs-5'>
+        <h4>{{selectedHeader}}</h4>
+      </div>
+    </div>
+
     <div class='row'>
 
       <!-- SELECTABLE ITEMS -->
@@ -100,11 +111,13 @@ const INVISIBLE_CLASS = 'co-invisible'
   `,
 })
 export class CoSelectableItemsCmp implements OnInit, OnChanges {
-  @Input() public selectableItems: Array<any>
-  @Input() public selectedItems: Array<any>
-  @Input() public listHeight
-  public selectableFilter = new Control('')
-  public selectedFilter = new Control('')
+  @Input() public selectableItems: Array<any>;
+  @Input() public selectedItems: Array<any>;
+  @Input() public listHeight;
+  @Input() public selectableHeader: string = '';
+  @Input() public selectedHeader: string = '';
+  public selectableFilter = new Control('');
+  public selectedFilter = new Control('');
 
   public ngOnInit () {
     this.subscribeToFilterChanges()
