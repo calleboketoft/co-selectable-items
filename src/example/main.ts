@@ -1,3 +1,3 @@
 import {bootstrap} from '@angular/platform-browser-dynamic'
-import {AppCmp} from './app.component'
-bootstrap(AppCmp)
+import {AppComponent} from './app.component'
+bootstrap(AppComponent)

@@ -4,7 +4,7 @@ var fixtures_1 = require('./fixtures');
 var co_selectable_items_component_1 = require('../../co-selectable-items/co-selectable-items.component');
 testing_1.describe('CoSelectableItemsCmp', function () {
     testing_1.it('Should be defined', function () {
-        testing_1.expect(co_selectable_items_component_1.CoSelectableItemsCmp).toBeDefined();
+        testing_1.expect(co_selectable_items_component_1.CoSelectableItemsComponent).toBeDefined();
     });
     testing_1.it('Should initialise values correctly', function () {
         var cmp = initCmp();
@@ -15,24 +15,24 @@ testing_1.describe('CoSelectableItemsCmp', function () {
         testing_1.expect(fixtures_1.default().initDone).toEqual(cmp.selectableItems);
     });
     testing_1.it('Should be able to filter on exact partial match', function () {
-        var cmp = new co_selectable_items_component_1.CoSelectableItemsCmp();
+        var cmp = new co_selectable_items_component_1.CoSelectableItemsComponent();
         var matched = cmp.filterItem('SomeString', 'Some');
         testing_1.expect(matched).toBe(true);
     });
     testing_1.it('Should be able to filter on case insensitive partial match', function () {
-        var cmp = new co_selectable_items_component_1.CoSelectableItemsCmp();
+        var cmp = new co_selectable_items_component_1.CoSelectableItemsComponent();
         var matched = cmp.filterItem('SomeString', 'so');
         testing_1.expect(matched).toBe(true);
     });
     testing_1.it('Should not hide selectable when filtering selected', function () {
-        var cmp = new co_selectable_items_component_1.CoSelectableItemsCmp();
+        var cmp = new co_selectable_items_component_1.CoSelectableItemsComponent();
         var selectableList = fixtures_1.default().filterIsolatedBefore;
         cmp.filterSelected(selectableList, 'Random');
         var selectedExpected = fixtures_1.default().filterIsolatedSelectedAfter;
         testing_1.expect(selectableList).toEqual(selectedExpected);
     });
     testing_1.it('Should not hide selected when filtering selectable', function () {
-        var cmp = new co_selectable_items_component_1.CoSelectableItemsCmp();
+        var cmp = new co_selectable_items_component_1.CoSelectableItemsComponent();
         var selectableList = fixtures_1.default().filterIsolatedBefore;
         cmp.filterSelectable(selectableList, 'Random');
         testing_1.expect(selectableList).toEqual(fixtures_1.default().filterIsolatedSelectableAfter);
@@ -107,7 +107,7 @@ testing_1.describe('CoSelectableItemsCmp', function () {
 });
 // Instantiate component and initialize values
 function initCmp(selectable, selected) {
-    var cmp = new co_selectable_items_component_1.CoSelectableItemsCmp();
+    var cmp = new co_selectable_items_component_1.CoSelectableItemsComponent();
     cmp.selectableItems = selectable || fixtures_1.default().initSelectable;
     cmp.selectedItems = selected || fixtures_1.default().initSelected;
     cmp.initValues();

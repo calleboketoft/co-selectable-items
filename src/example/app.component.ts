@@ -1,9 +1,9 @@
 import { Component } from '@angular/core'
-import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items.component'
+import { CoSelectableItemsComponent } from '../co-selectable-items/co-selectable-items.component'
 
 @Component({
   selector: 'co-selectable-items-example',
-  directives: [CoSelectableItemsCmp],
+  directives: [CoSelectableItemsComponent],
   template:`
     <div class='container' style='margin-top: 25px;'>
       <h3>co-selectable-items example</h3>
@@ -18,7 +18,7 @@ import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items
     </div>
   `
 })
-export class AppCmp {
+export class AppComponent {
 
   selectableItems
 

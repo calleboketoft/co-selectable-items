@@ -110,7 +110,7 @@ const INVISIBLE_CLASS = 'co-invisible'
     </div>
   `,
 })
-export class CoSelectableItemsCmp implements OnInit, OnChanges {
+export class CoSelectableItemsComponent implements OnInit, OnChanges {
   @Input() public selectableItems: Array<any>;
   @Input() public selectedItems: Array<any>;
   @Input() public listHeight;

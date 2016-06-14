@@ -13,21 +13,21 @@ var common_1 = require('@angular/common');
 var VISIBLE_CLASS = 'co-visible';
 var INVISIBLE_CLASS = 'co-invisible';
 // Selectable items component
-var CoSelectableItemsCmp = (function () {
-    function CoSelectableItemsCmp() {
+var CoSelectableItemsComponent = (function () {
+    function CoSelectableItemsComponent() {
         this.selectableHeader = '';
         this.selectedHeader = '';
         this.selectableFilter = new common_1.Control('');
         this.selectedFilter = new common_1.Control('');
     }
-    CoSelectableItemsCmp.prototype.ngOnInit = function () {
+    CoSelectableItemsComponent.prototype.ngOnInit = function () {
         this.subscribeToFilterChanges();
     };
-    CoSelectableItemsCmp.prototype.ngOnChanges = function (changes) {
+    CoSelectableItemsComponent.prototype.ngOnChanges = function (changes) {
         this.initValues();
     };
     // subscribe to filter updates
-    CoSelectableItemsCmp.prototype.subscribeToFilterChanges = function () {
+    CoSelectableItemsComponent.prototype.subscribeToFilterChanges = function () {
         var _this = this;
         this.selectableFilter.valueChanges
             .subscribe(function (value) {
@@ -38,19 +38,19 @@ var CoSelectableItemsCmp = (function () {
             _this.filterSelected(_this.selectableItems, value);
         });
     };
-    CoSelectableItemsCmp.prototype.filterSelectable = function (items, value) {
+    CoSelectableItemsComponent.prototype.filterSelectable = function (items, value) {
         var _this = this;
         items.forEach(function (item) {
             item.filteredOutSelectable = !_this.filterItem(item.displayName, value);
         });
     };
-    CoSelectableItemsCmp.prototype.filterSelected = function (items, value) {
+    CoSelectableItemsComponent.prototype.filterSelected = function (items, value) {
         var _this = this;
         items.forEach(function (item) {
             item.filteredOutSelected = !_this.filterItem(item.displayName, value);
         });
     };
-    CoSelectableItemsCmp.prototype.initValues = function () {
+    CoSelectableItemsComponent.prototype.initValues = function () {
         var selectableLength = this.selectableItems.length;
         var i;
         for (i = 0; i < selectableLength; i++) {
@@ -62,12 +62,12 @@ var CoSelectableItemsCmp = (function () {
             });
         }
     };
-    CoSelectableItemsCmp.prototype.filterItem = function (itemStr, filterStr) {
+    CoSelectableItemsComponent.prototype.filterItem = function (itemStr, filterStr) {
         var itemStrLc = itemStr.toLowerCase();
         var filterStrLc = filterStr.toLowerCase();
         return itemStrLc.indexOf(filterStrLc) !== -1;
     };
-    CoSelectableItemsCmp.prototype.shouldHide = function (item, listType) {
+    CoSelectableItemsComponent.prototype.shouldHide = function (item, listType) {
         var hide = false;
         var selectableAndSelected = listType === 'selectable' && item.selected;
         var selectableAndFilteredOut = listType === 'selectable' && item.filteredOutSelectable;
@@ -78,18 +78,18 @@ var CoSelectableItemsCmp = (function () {
         }
         return hide;
     };
-    CoSelectableItemsCmp.prototype.getDisplayClass = function (item, listType) {
+    CoSelectableItemsComponent.prototype.getDisplayClass = function (item, listType) {
         var displayClass = VISIBLE_CLASS;
         if (this.shouldHide(item, listType)) {
             displayClass = INVISIBLE_CLASS;
         }
         return displayClass;
     };
-    CoSelectableItemsCmp.prototype.selectItem = function (itemToSelect) {
+    CoSelectableItemsComponent.prototype.selectItem = function (itemToSelect) {
         itemToSelect.selected = true;
         this.selectedItems.push(itemToSelect.refValue);
     };
-    CoSelectableItemsCmp.prototype.selectAllFiltered = function () {
+    CoSelectableItemsComponent.prototype.selectAllFiltered = function () {
         var _this = this;
         this.selectableItems.forEach(function (item) {
             if (!item.selected && !item.filteredOutSelectable) {
@@ -97,7 +97,7 @@ var CoSelectableItemsCmp = (function () {
             }
         });
     };
-    CoSelectableItemsCmp.prototype.deselectItem = function (itemToUnselect) {
+    CoSelectableItemsComponent.prototype.deselectItem = function (itemToUnselect) {
         var _this = this;
         itemToUnselect.selected = false;
         this.selectedItems.forEach(function (selectedItem, index) {
@@ -108,7 +108,7 @@ var CoSelectableItemsCmp = (function () {
             }
         });
     };
-    CoSelectableItemsCmp.prototype.deselectAllFiltered = function () {
+    CoSelectableItemsComponent.prototype.deselectAllFiltered = function () {
         var _this = this;
         this.selectableItems.forEach(function (item) {
             if (item.selected && !item.filteredOutSelected) {
@@ -119,24 +119,24 @@ var CoSelectableItemsCmp = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
-    ], CoSelectableItemsCmp.prototype, "selectableItems", void 0);
+    ], CoSelectableItemsComponent.prototype, "selectableItems", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
-    ], CoSelectableItemsCmp.prototype, "selectedItems", void 0);
+    ], CoSelectableItemsComponent.prototype, "selectedItems", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], CoSelectableItemsCmp.prototype, "listHeight", void 0);
+    ], CoSelectableItemsComponent.prototype, "listHeight", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
-    ], CoSelectableItemsCmp.prototype, "selectableHeader", void 0);
+    ], CoSelectableItemsComponent.prototype, "selectableHeader", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
-    ], CoSelectableItemsCmp.prototype, "selectedHeader", void 0);
-    CoSelectableItemsCmp = __decorate([
+    ], CoSelectableItemsComponent.prototype, "selectedHeader", void 0);
+    CoSelectableItemsComponent = __decorate([
         core_1.Component({
             directives: [common_1.NgFor, common_1.NgClass, common_1.NgStyle, common_1.FORM_DIRECTIVES],
             selector: 'co-selectable-items',
@@ -144,10 +144,10 @@ var CoSelectableItemsCmp = (function () {
             template: "\n    <div class='row' *ngIf='selectableHeader || selectedHeader'>\n      <div class='col-xs-5'>\n        <h4>{{selectableHeader}}</h4>\n      </div>\n      <div class='col-xs-2'>\n      </div>\n      <div class='col-xs-5'>\n        <h4>{{selectedHeader}}</h4>\n      </div>\n    </div>\n\n    <div class='row'>\n\n      <!-- SELECTABLE ITEMS -->\n      <div class='col-xs-5'>\n        <div class='card'>\n          <div class='card-header'>\n            <input type='text' class='form-control'\n              id='co-selectable-items-selectable-filter'\n              placeholder='Filter'\n              [ngFormControl]='selectableFilter'>\n          </div>\n          <ul class='list-group list-group-flush text-left'\n            id='co-selectable-items-selectable-list'\n            [ngStyle]='{\"height\": listHeight}'>\n            <li class='list-group-item'\n              *ngFor='let item of selectableItems'\n              [ngClass]='getDisplayClass(item, \"selectable\")'\n              (click)='selectItem(item)'>\n              {{item.displayName}}\n            </li>\n          </ul>\n        </div>\n      </div>\n\n      <!-- BATCH BUTTONS -->\n      <div class='col-xs-2 text-center'>\n        <button type='button' class='btn btn-primary'\n          id='co-selectable-items-select-all'\n          (click)='selectAllFiltered()'>\n          &gt;&gt;\n        </button>\n        <br><br>\n        <button type='button' class='btn btn-primary'\n          id='co-selectable-items-deselect-all'\n          (click)='deselectAllFiltered()'>\n          &lt;&lt;\n        </button>\n      </div>\n\n      <!-- SELECTED ITEMS -->\n      <div class='col-xs-5'>\n        <div class='card'>\n          <div class='card-header'>\n            <input type='text' class='form-control'\n              id='co-selectable-items-selected-filter'\n              placeholder='Filter'\n              [ngFormControl]='selectedFilter'>\n          </div>\n            <ul class='list-group list-group-flush text-left'\n              id='co-selectable-items-selected-list'\n              [ngStyle]='{\"height\":listHeight}'>\n            <li class='list-group-item'\n              *ngFor='let item of selectableItems'\n              [ngClass]='getDisplayClass(item, \"selected\")'\n              (click)='deselectItem(item)'>\n              {{item.displayName}}\n            </li>\n          </ul>\n        </div>\n      </div>\n\n    </div>\n  ",
         }), 
         __metadata('design:paramtypes', [])
-    ], CoSelectableItemsCmp);
-    return CoSelectableItemsCmp;
+    ], CoSelectableItemsComponent);
+    return CoSelectableItemsComponent;
 }());
-exports.CoSelectableItemsCmp = CoSelectableItemsCmp;
+exports.CoSelectableItemsComponent = CoSelectableItemsComponent;
 // http://stackoverflow.com/questions/25456013/javascript-deepequal-comparison
 function deepEqual(x, y) {
     if ((typeof x == 'object' && x != null) && (typeof y == 'object' && y != null)) {
