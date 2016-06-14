@@ -173,4 +173,4 @@ function deepEqual(x, y) {
         return true;
     }
 }
-//# sourceMappingURL=co-selectable-items-cmp.js.map
+//# sourceMappingURL=co-selectable-items.component.js.map

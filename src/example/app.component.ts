@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items-cmp'
+import { CoSelectableItemsCmp } from '../co-selectable-items/co-selectable-items.component'
 
 @Component({
   selector: 'co-selectable-items-example',

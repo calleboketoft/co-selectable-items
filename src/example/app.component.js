@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var co_selectable_items_cmp_1 = require('../co-selectable-items/co-selectable-items-cmp');
+var co_selectable_items_component_1 = require('../co-selectable-items/co-selectable-items.component');
 var AppCmp = (function () {
     function AppCmp() {
         // Prepared mock data
@@ -66,7 +66,7 @@ var AppCmp = (function () {
     AppCmp = __decorate([
         core_1.Component({
             selector: 'co-selectable-items-example',
-            directives: [co_selectable_items_cmp_1.CoSelectableItemsCmp],
+            directives: [co_selectable_items_component_1.CoSelectableItemsCmp],
             template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>co-selectable-items example</h3>\n      <br>\n      <co-selectable-items\n        [selectableItems]='selectableItems'\n        [selectableHeader]='\"Selectable\"'\n        [selectedItems]='selectedItems'\n        [selectedHeader]='\"Selected\"'\n        [listHeight]='\"150px\"'>\n      </co-selectable-items>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
@@ -74,4 +74,4 @@ var AppCmp = (function () {
     return AppCmp;
 }());
 exports.AppCmp = AppCmp;
-//# sourceMappingURL=app-cmp.js.map
+//# sourceMappingURL=app.component.js.map
