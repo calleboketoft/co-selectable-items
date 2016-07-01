@@ -28,7 +28,15 @@ module.exports = function(config) {
       'src/test/unit/*.spec.js'
     ],
     basePath: '',
-    frameworks: ['systemjs', 'jasmine'],
+    plugins: [
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-systemjs'
+    ],
+    frameworks: [
+      'systemjs',
+      'jasmine'
+    ],
     reporters: ['progress'],
     port: 9876,
     colors: true,
