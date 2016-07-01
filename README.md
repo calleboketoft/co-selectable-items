@@ -5,6 +5,7 @@ This component can be used when you have a large list of items from which you wi
 ## Run the example code
 
 - `npm install`
+- `npm run build`
 - `npm start` serve the files
 - navigate to `localhost:3000` in web browser
 
