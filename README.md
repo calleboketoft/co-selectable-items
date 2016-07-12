@@ -86,6 +86,9 @@ Component HTML:
 <co-selectable-items
   [selectableItems]="selectableItems"
   [selectedItems]="selectedItems"
-  [listHeight]="'150px'">
+  [listHeight]="'150px'"
+  [selectableHeader]="'Selectable Items'"
+  [selectedHeader]="'Selected Items'"
+  (selectedChanged)="someFunction($event)">
 </co-selectable-items>
 ```

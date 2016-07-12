@@ -2,7 +2,9 @@ import {
   Component,
   Input,
   OnInit,
-  OnChanges
+  OnChanges,
+  EventEmitter,
+  Output
 } from '@angular/core'
 
 import {
@@ -116,6 +118,7 @@ export class CoSelectableItemsComponent implements OnInit, OnChanges {
   @Input() public listHeight;
   @Input() public selectableHeader: string = '';
   @Input() public selectedHeader: string = '';
+  @Output() selectedChanged = new EventEmitter();
   public selectableFilter = new Control('');
   public selectedFilter = new Control('');
 
@@ -194,6 +197,7 @@ export class CoSelectableItemsComponent implements OnInit, OnChanges {
   public selectItem (itemToSelect) {
     itemToSelect.selected = true
     this.selectedItems.push(itemToSelect.refValue)
+    this.selectedChanged.emit(this.selectedItems)
   }
 
   public selectAllFiltered () {
@@ -210,6 +214,7 @@ export class CoSelectableItemsComponent implements OnInit, OnChanges {
       let isEqual = deepEqual(itemToUnselect.refValue, selectedItem)
       if (isEqual) {
         this.selectedItems.splice(index, 1)
+        this.selectedChanged.emit(this.selectedItems)
         return
       }
     })

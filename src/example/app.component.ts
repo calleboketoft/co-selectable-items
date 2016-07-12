@@ -13,7 +13,8 @@ import { CoSelectableItemsComponent } from '../co-selectable-items/co-selectable
         [selectableHeader]='"Selectable"'
         [selectedItems]='selectedItems'
         [selectedHeader]='"Selected"'
-        [listHeight]='"150px"'>
+        [listHeight]='"150px"'
+        (selectedChanged)="selectedChanged($event)">
       </co-selectable-items>
     </div>
   `
@@ -76,5 +77,9 @@ export class AppComponent {
         has: 'spikes'
       }
     ]
+  }
+
+  public selectedChanged($event) {
+    console.log($event)
   }
 }

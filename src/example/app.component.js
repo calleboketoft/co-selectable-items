@@ -63,11 +63,14 @@ var AppComponent = (function () {
             }
         ];
     }
+    AppComponent.prototype.selectedChanged = function ($event) {
+        console.log($event);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'co-selectable-items-example',
             directives: [co_selectable_items_component_1.CoSelectableItemsComponent],
-            template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>co-selectable-items example</h3>\n      <br>\n      <co-selectable-items\n        [selectableItems]='selectableItems'\n        [selectableHeader]='\"Selectable\"'\n        [selectedItems]='selectedItems'\n        [selectedHeader]='\"Selected\"'\n        [listHeight]='\"150px\"'>\n      </co-selectable-items>\n    </div>\n  "
+            template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>co-selectable-items example</h3>\n      <br>\n      <co-selectable-items\n        [selectableItems]='selectableItems'\n        [selectableHeader]='\"Selectable\"'\n        [selectedItems]='selectedItems'\n        [selectedHeader]='\"Selected\"'\n        [listHeight]='\"150px\"'\n        (selectedChanged)=\"selectedChanged($event)\">\n      </co-selectable-items>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

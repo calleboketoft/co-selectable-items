@@ -17,6 +17,7 @@ var CoSelectableItemsComponent = (function () {
     function CoSelectableItemsComponent() {
         this.selectableHeader = '';
         this.selectedHeader = '';
+        this.selectedChanged = new core_1.EventEmitter();
         this.selectableFilter = new common_1.Control('');
         this.selectedFilter = new common_1.Control('');
     }
@@ -88,6 +89,7 @@ var CoSelectableItemsComponent = (function () {
     CoSelectableItemsComponent.prototype.selectItem = function (itemToSelect) {
         itemToSelect.selected = true;
         this.selectedItems.push(itemToSelect.refValue);
+        this.selectedChanged.emit(this.selectedItems);
     };
     CoSelectableItemsComponent.prototype.selectAllFiltered = function () {
         var _this = this;
@@ -104,6 +106,7 @@ var CoSelectableItemsComponent = (function () {
             var isEqual = deepEqual(itemToUnselect.refValue, selectedItem);
             if (isEqual) {
                 _this.selectedItems.splice(index, 1);
+                _this.selectedChanged.emit(_this.selectedItems);
                 return;
             }
         });
@@ -136,6 +139,10 @@ var CoSelectableItemsComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], CoSelectableItemsComponent.prototype, "selectedHeader", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], CoSelectableItemsComponent.prototype, "selectedChanged", void 0);
     CoSelectableItemsComponent = __decorate([
         core_1.Component({
             directives: [common_1.NgFor, common_1.NgClass, common_1.NgStyle, common_1.FORM_DIRECTIVES],
