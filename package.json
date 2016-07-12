@@ -1,6 +1,6 @@
 {
   "name": "co-selectable-items",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "main": "src/co-selectable-items/co-selectable-items-cmp",
   "scripts": {
     "build": "typings install && npm run typescript && npm run sass",
