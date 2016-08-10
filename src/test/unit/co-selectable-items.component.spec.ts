@@ -1,4 +1,3 @@
-import {it, describe, expect} from '@angular/core/testing'
 import fixtures from './fixtures'
 import { CoSelectableItemsComponent } from '../../co-selectable-items/co-selectable-items.component'
 

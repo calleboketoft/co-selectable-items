@@ -1,14 +1,6 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  OnChanges,
-  EventEmitter,
-  Output
-} from '@angular/core'
+import { Component, Input, OnInit, OnChanges, EventEmitter, Output } from '@angular/core'
 
 import {
-  NgFor,
   NgClass,
   NgStyle,
   FORM_DIRECTIVES,
@@ -20,7 +12,7 @@ const INVISIBLE_CLASS = 'co-invisible'
 
 // Selectable items component
 @Component({
-  directives: [NgFor, NgClass, NgStyle, FORM_DIRECTIVES],
+  directives: [NgClass, NgStyle, FORM_DIRECTIVES],
   selector: 'co-selectable-items',
   styles: [`
     .list-group {
@@ -37,35 +29,35 @@ const INVISIBLE_CLASS = 'co-invisible'
     }
   `],
   template: `
-    <div class='row' *ngIf='selectableHeader || selectedHeader'>
-      <div class='col-xs-5'>
+    <div class="row" *ngIf="selectableHeader || selectedHeader">
+      <div class="col-xs-5">
         <h4>{{selectableHeader}}</h4>
       </div>
-      <div class='col-xs-2'>
+      <div class="col-xs-2">
       </div>
-      <div class='col-xs-5'>
+      <div class="col-xs-5">
         <h4>{{selectedHeader}}</h4>
       </div>
     </div>
 
-    <div class='row'>
+    <div class="row">
 
       <!-- SELECTABLE ITEMS -->
-      <div class='col-xs-5'>
-        <div class='card'>
-          <div class='card-header'>
-            <input type='text' class='form-control'
-              id='co-selectable-items-selectable-filter'
-              placeholder='Filter'
-              [ngFormControl]='selectableFilter'>
+      <div class="col-xs-5">
+        <div class="card">
+          <div class="card-header">
+            <input type="text" class="form-control"
+              id="co-selectable-items-selectable-filter"
+              placeholder="Filter"
+              [ngFormControl]="selectableFilter">
           </div>
-          <ul class='list-group list-group-flush text-left'
-            id='co-selectable-items-selectable-list'
-            [ngStyle]='{"height": listHeight}'>
-            <li class='list-group-item'
-              *ngFor='let item of selectableItems'
-              [ngClass]='getDisplayClass(item, "selectable")'
-              (click)='selectItem(item)'>
+          <ul class="list-group list-group-flush text-left"
+            id="co-selectable-items-selectable-list"
+            [ngStyle]="{'height': listHeight}">
+            <li class="list-group-item"
+              *ngFor="let item of selectableItems"
+              [ngClass]="getDisplayClass(item, 'selectable')"
+              (click)="selectItem(item)">
               {{item.displayName}}
             </li>
           </ul>
@@ -73,36 +65,36 @@ const INVISIBLE_CLASS = 'co-invisible'
       </div>
 
       <!-- BATCH BUTTONS -->
-      <div class='col-xs-2 text-center'>
-        <button type='button' class='btn btn-primary'
-          id='co-selectable-items-select-all'
-          (click)='selectAllFiltered()'>
+      <div class="col-xs-2 text-center">
+        <button type="button" class="btn btn-primary"
+          id="co-selectable-items-select-all"
+          (click)="selectAllFiltered()">
           &gt;&gt;
         </button>
         <br><br>
-        <button type='button' class='btn btn-primary'
-          id='co-selectable-items-deselect-all'
-          (click)='deselectAllFiltered()'>
+        <button type="button" class="btn btn-primary"
+          id="co-selectable-items-deselect-all"
+          (click)="deselectAllFiltered()">
           &lt;&lt;
         </button>
       </div>
 
       <!-- SELECTED ITEMS -->
-      <div class='col-xs-5'>
-        <div class='card'>
-          <div class='card-header'>
-            <input type='text' class='form-control'
-              id='co-selectable-items-selected-filter'
-              placeholder='Filter'
-              [ngFormControl]='selectedFilter'>
+      <div class="col-xs-5">
+        <div class="card">
+          <div class="card-header">
+            <input type="text" class="form-control"
+              id="co-selectable-items-selected-filter"
+              placeholder="Filter"
+              [ngFormControl]="selectedFilter">
           </div>
-            <ul class='list-group list-group-flush text-left'
-              id='co-selectable-items-selected-list'
-              [ngStyle]='{"height":listHeight}'>
-            <li class='list-group-item'
-              *ngFor='let item of selectableItems'
-              [ngClass]='getDisplayClass(item, "selected")'
-              (click)='deselectItem(item)'>
+            <ul class="list-group list-group-flush text-left"
+              id="co-selectable-items-selected-list"
+              [ngStyle]="{'height':listHeight}">
+            <li class="list-group-item"
+              *ngFor="let item of selectableItems"
+              [ngClass]="getDisplayClass(item, 'selected')"
+              (click)="deselectItem(item)">
               {{item.displayName}}
             </li>
           </ul>
