@@ -1,9 +1,9 @@
 {
   "name": "@calle/ng2-selectable-items",
-  "version": "1.0.2",
-  "main": "selectable-items.js",
+  "version": "1.0.3",
+  "main": "index.js",
   "scripts": {
-    "build": "typings install && npm run typescript && npm run sass",
+    "build": "typings install && npm run typescript && npm run sass && npm run install_webdriver",
     "install_webdriver": "node_modules/protractor/bin/webdriver-manager update",
     "sass": "gulp sass",
     "start": "node server.js",
