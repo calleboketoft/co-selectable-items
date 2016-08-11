@@ -1,3 +1,3 @@
 export {
-  CoSelectableItemsModule
-} from './src/co-selectable-items/co-selectable-items.module'
+  SelectableItemsModule
+} from './src/selectable-items/selectable-items.module'

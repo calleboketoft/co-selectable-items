@@ -8,7 +8,7 @@
     "sass": "gulp sass",
     "start": "node server.js",
     "test": "npm run test-unit && npm run test-e2e",
-    "test-e2e": "npm run install_webdriver && npm run typescript && gulp test-e2e",
+    "test-e2e": "npm run typescript && gulp test-e2e",
     "test-unit": "karma start",
     "typescript": "tsc",
     "watch": "tsc -w",
