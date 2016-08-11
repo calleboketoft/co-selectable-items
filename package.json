@@ -1,7 +1,7 @@
 {
   "name": "@calle/ng2-selectable-items",
   "version": "1.0.2",
-  "main": "ng2-selectable-items.js",
+  "main": "selectable-items.js",
   "scripts": {
     "build": "typings install && npm run typescript && npm run sass",
     "install_webdriver": "node_modules/protractor/bin/webdriver-manager update",
