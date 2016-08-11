@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, OnChanges, EventEmitter, Output } from '@angular/core'
+import {
+  Component,
+  Input,
+  OnInit,
+  OnChanges,
+  EventEmitter,
+  Output
+} from '@angular/core'
 
 import {
   NgClass,

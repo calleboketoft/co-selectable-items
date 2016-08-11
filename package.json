@@ -1,7 +1,7 @@
 {
-  "name": "co-selectable-items",
+  "name": "@calle/ng2-selectable-items",
   "version": "1.0.1",
-  "main": "src/co-selectable-items/co-selectable-items-cmp",
+  "main": "co-selectable-items.js",
   "scripts": {
     "build": "typings install && npm run typescript && npm run sass",
     "install_webdriver": "node_modules/protractor/bin/webdriver-manager update",
@@ -47,7 +47,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/calleboketoft/co-selectable-items.git"
+    "url": "https://github.com/calleboketoft/ng2-selectable-items.git"
   },
   "config": {
     "ghooks": {
