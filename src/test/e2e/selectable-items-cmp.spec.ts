@@ -6,7 +6,7 @@ declare var beforeEach:any
 declare var browser:any
 declare var by:any
 
-import { CoSelectableItemsPageObject } from './co-selectable-items-cmp.page-object'
+import { SelectableItemsPageObject } from './selectable-items-cmp.page-object'
 
 describe('SelectableItems', () => {
 
@@ -14,7 +14,7 @@ describe('SelectableItems', () => {
     browser.get('/')
   })
 
-  let pageObject: CoSelectableItemsPageObject = new CoSelectableItemsPageObject()
+  let pageObject: SelectableItemsPageObject = new SelectableItemsPageObject()
 
   it('should display items properly after initialisation', () => {
     let expectedSelectable = ['Bear', 'Fire', 'Calle']

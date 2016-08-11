@@ -4,7 +4,7 @@ declare var by:any
 
 const VISIBLE_CLASS = 'co-visible'
 
-export class CoSelectableItemsPageObject {
+export class SelectableItemsPageObject {
 
   public selectableFilter = element(by.id('co-selectable-items-selectable-filter'));
   public selectedFilter = element(by.id('co-selectable-items-selected-filter'));

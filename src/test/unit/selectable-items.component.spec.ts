@@ -1,9 +1,9 @@
 import fixtures from './fixtures'
-import { CoSelectableItemsComponent } from '../../co-selectable-items/co-selectable-items.component'
+import { SelectableItemsComponent } from '../../selectable-items/selectable-items.component'
 
 describe('CoSelectableItemsCmp', () => {
   it('Should be defined', () => {
-    expect(CoSelectableItemsComponent).toBeDefined()
+    expect(SelectableItemsComponent).toBeDefined()
   })
 
   it('Should initialise values correctly', () => {
@@ -17,19 +17,19 @@ describe('CoSelectableItemsCmp', () => {
   })
 
   it('Should be able to filter on exact partial match', () => {
-    let cmp = new CoSelectableItemsComponent()
+    let cmp = new SelectableItemsComponent()
     let matched = cmp.filterItem('SomeString', 'Some')
     expect(matched).toBe(true)
   })
 
   it('Should be able to filter on case insensitive partial match', () => {
-    let cmp = new CoSelectableItemsComponent()
+    let cmp = new SelectableItemsComponent()
     let matched = cmp.filterItem('SomeString', 'so')
     expect(matched).toBe(true)
   })
 
   it('Should not hide selectable when filtering selected', () => {
-    let cmp = new CoSelectableItemsComponent()
+    let cmp = new SelectableItemsComponent()
     let selectableList = fixtures().filterIsolatedBefore
     cmp.filterSelected(selectableList, 'Random')
     let selectedExpected = fixtures().filterIsolatedSelectedAfter
@@ -37,7 +37,7 @@ describe('CoSelectableItemsCmp', () => {
   })
 
   it('Should not hide selected when filtering selectable', () => {
-    let cmp = new CoSelectableItemsComponent()
+    let cmp = new SelectableItemsComponent()
     let selectableList = fixtures().filterIsolatedBefore
     cmp.filterSelectable(selectableList, 'Random')
     expect(selectableList).toEqual(fixtures().filterIsolatedSelectableAfter)
@@ -125,7 +125,7 @@ describe('CoSelectableItemsCmp', () => {
 
 // Instantiate component and initialize values
 function initCmp (selectable?, selected?) {
-  let cmp = new CoSelectableItemsComponent()
+  let cmp = new SelectableItemsComponent()
   cmp.selectableItems = selectable || fixtures().initSelectable
   cmp.selectedItems = selected || fixtures().initSelected
   cmp.initValues()

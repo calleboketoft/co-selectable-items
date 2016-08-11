@@ -1,21 +1,21 @@
 import { Component } from '@angular/core'
-import { CoSelectableItemsComponent } from '../co-selectable-items/co-selectable-items.component'
+import { SelectableItemsComponent } from '../selectable-items/selectable-items.component'
 
 @Component({
-  selector: 'co-selectable-items-example',
-  directives: [CoSelectableItemsComponent],
+  selector: 'selectable-items-example',
+  directives: [SelectableItemsComponent],
   template:`
     <div class='container' style='margin-top: 25px;'>
-      <h3>co-selectable-items example</h3>
+      <h3>selectable-items example</h3>
       <br>
-      <co-selectable-items
+      <selectable-items
         [selectableItems]='selectableItems'
         [selectableHeader]='"Selectable"'
         [selectedItems]='selectedItems'
         [selectedHeader]='"Selected"'
         [listHeight]='"150px"'
         (selectedChanged)="selectedChanged($event)">
-      </co-selectable-items>
+      </selectable-items>
     </div>
   `
 })

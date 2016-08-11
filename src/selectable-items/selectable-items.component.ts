@@ -20,7 +20,7 @@ const INVISIBLE_CLASS = 'co-invisible'
 // Selectable items component
 @Component({
   directives: [NgClass, NgStyle, FORM_DIRECTIVES],
-  selector: 'co-selectable-items',
+  selector: 'selectable-items',
   styles: [`
     .list-group {
       overflow: auto;
@@ -111,7 +111,7 @@ const INVISIBLE_CLASS = 'co-invisible'
     </div>
   `,
 })
-export class CoSelectableItemsComponent implements OnInit, OnChanges {
+export class SelectableItemsComponent implements OnInit, OnChanges {
   @Input() public selectableItems: Array<any>;
   @Input() public selectedItems: Array<any>;
   @Input() public listHeight;
