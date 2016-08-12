@@ -1,6 +1,6 @@
 {
   "name": "@calle/ng2-selectable-items",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "scripts": {
     "build": "typings install && npm run typescript && npm run sass && npm run install_webdriver",

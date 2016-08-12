@@ -9,6 +9,12 @@ This component can be used when you have a large list of items from which you wi
 - `npm start` serve the files
 - navigate to `localhost:3000` in web browser
 
+## Use in your app
+
+- `npm install --save @calle/ng2-selectable-items`
+- Import module `import { SelectableItemsModule } from '@calle/ng2-selectable-items'`
+- See `Concept of component` below for usage instructions
+
 ## Run tests
 
 - `npm test`
@@ -83,12 +89,12 @@ var selectedItems = [
 
 Component HTML:
 ```html
-<co-selectable-items
+<selectable-items
   [selectableItems]="selectableItems"
   [selectedItems]="selectedItems"
   [listHeight]="'150px'"
   [selectableHeader]="'Selectable Items'"
   [selectedHeader]="'Selected Items'"
   (selectedChanged)="someFunction($event)">
-</co-selectable-items>
+</selectable-items>
 ```
