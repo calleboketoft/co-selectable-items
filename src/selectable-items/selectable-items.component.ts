@@ -1,25 +1,11 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  OnChanges,
-  EventEmitter,
-  Output
-} from '@angular/core'
-
-import {
-  NgClass,
-  NgStyle,
-  FORM_DIRECTIVES,
-  Control
-} from '@angular/common'
+import {Component, Input, OnInit, OnChanges, EventEmitter, Output} from '@angular/core'
+import {FormControl} from '@angular/forms'
 
 const VISIBLE_CLASS = 'co-visible'
 const INVISIBLE_CLASS = 'co-invisible'
 
 // Selectable items component
 @Component({
-  directives: [NgClass, NgStyle, FORM_DIRECTIVES],
   selector: 'selectable-items',
   styles: [`
     .list-group {
@@ -56,7 +42,7 @@ const INVISIBLE_CLASS = 'co-invisible'
             <input type="text" class="form-control"
               id="co-selectable-items-selectable-filter"
               placeholder="Filter"
-              [ngFormControl]="selectableFilter">
+              [formControl]="selectableFilter">
           </div>
           <ul class="list-group list-group-flush text-left"
             id="co-selectable-items-selectable-list"
@@ -93,7 +79,7 @@ const INVISIBLE_CLASS = 'co-invisible'
             <input type="text" class="form-control"
               id="co-selectable-items-selected-filter"
               placeholder="Filter"
-              [ngFormControl]="selectedFilter">
+              [formControl]="selectedFilter">
           </div>
             <ul class="list-group list-group-flush text-left"
               id="co-selectable-items-selected-list"
@@ -118,8 +104,8 @@ export class SelectableItemsComponent implements OnInit, OnChanges {
   @Input() public selectableHeader: string = '';
   @Input() public selectedHeader: string = '';
   @Output() selectedChanged = new EventEmitter();
-  public selectableFilter = new Control('');
-  public selectedFilter = new Control('');
+  public selectableFilter = new FormControl();
+  public selectedFilter = new FormControl();
 
   public ngOnInit () {
     this.subscribeToFilterChanges()

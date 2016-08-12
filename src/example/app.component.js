@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var selectable_items_component_1 = require('../selectable-items/selectable-items.component');
 var AppComponent = (function () {
     function AppComponent() {
         // Prepared mock data
@@ -69,7 +68,6 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'selectable-items-example',
-            directives: [selectable_items_component_1.SelectableItemsComponent],
             template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>selectable-items example</h3>\n      <br>\n      <selectable-items\n        [selectableItems]='selectableItems'\n        [selectableHeader]='\"Selectable\"'\n        [selectedItems]='selectedItems'\n        [selectedHeader]='\"Selected\"'\n        [listHeight]='\"150px\"'\n        (selectedChanged)=\"selectedChanged($event)\">\n      </selectable-items>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])

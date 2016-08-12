@@ -1,6 +1,6 @@
 {
   "name": "@calle/ng2-selectable-items",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "scripts": {
     "build": "typings install && npm run typescript && npm run sass && npm run install_webdriver",
@@ -15,12 +15,14 @@
     "typings": "typings"
   },
   "peerDependencies": {
-    "@angular/core": "^2.0.0-rc.5"
+    "@angular/core": "^2.0.0-rc.5",
+    "@angular/forms": "^0.3.0"
   },
   "devDependencies": {
-    "@angular/core": "2.0.0-rc.5",
     "@angular/common": "2.0.0-rc.5",
     "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/forms": "0.3.0",
     "@angular/platform-browser": "2.0.0-rc.5",
     "@angular/platform-browser-dynamic": "2.0.0-rc.5",
     "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
@@ -51,7 +53,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-push": "npm run build"
+      "pre-commit": "npm run build"
     }
   },
   "description": "Selectable items component for Angular 2"

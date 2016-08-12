@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
 var selectable_items_component_1 = require('./selectable-items.component');
 var SelectableItemsModule = (function () {
     function SelectableItemsModule() {
@@ -17,7 +18,7 @@ var SelectableItemsModule = (function () {
     SelectableItemsModule = __decorate([
         core_1.NgModule({
             declarations: [selectable_items_component_1.SelectableItemsComponent],
-            imports: [platform_browser_1.BrowserModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.ReactiveFormsModule],
             exports: [selectable_items_component_1.SelectableItemsComponent]
         }), 
         __metadata('design:paramtypes', [])

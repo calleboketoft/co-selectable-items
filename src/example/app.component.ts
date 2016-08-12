@@ -1,9 +1,7 @@
 import { Component } from '@angular/core'
-import { SelectableItemsComponent } from '../selectable-items/selectable-items.component'
 
 @Component({
   selector: 'selectable-items-example',
-  directives: [SelectableItemsComponent],
   template:`
     <div class='container' style='margin-top: 25px;'>
       <h3>selectable-items example</h3>
