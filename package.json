@@ -1,6 +1,6 @@
 {
   "name": "@calle/ng2-selectable-items",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "index.js",
   "scripts": {
     "build": "typings install && npm run typescript && npm run sass && npm run install_webdriver",
@@ -33,7 +33,7 @@
     "gulp": "3.9.1",
     "gulp-sass": "2.3.2",
     "jasmine-core": "2.5.2",
-    "karma": "0.13.22",
+    "karma": "1.3.0",
     "karma-chrome-launcher": "2.0.0",
     "karma-jasmine": "1.0.2",
     "karma-systemjs": "0.15.0",
