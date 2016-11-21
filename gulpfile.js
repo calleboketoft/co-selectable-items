@@ -1,13 +1,5 @@
 var gulp = require('gulp')
 
-// SASS
-var sass = require('gulp-sass')
-gulp.task('sass', function () {
-  gulp.src('./node_modules/bootstrap/scss/bootstrap.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./src/css'))
-})
-
 // E2E tests with Protractor
 // Ironically, the instructions for how to get this up and running was found at
 // the site for gulp-protractor plugin: https://github.com/mllrsohn/gulp-protractor
