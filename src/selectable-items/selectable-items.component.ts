@@ -1,5 +1,6 @@
-import {Component, Input, OnInit, OnChanges, EventEmitter, Output} from '@angular/core'
-import {FormControl} from '@angular/forms'
+import { Component, Input, OnInit, OnChanges, EventEmitter,
+  Output } from '@angular/core'
+import { FormControl } from '@angular/forms'
 
 const VISIBLE_CLASS = 'co-visible'
 const INVISIBLE_CLASS = 'co-invisible'
@@ -98,14 +99,14 @@ const INVISIBLE_CLASS = 'co-invisible'
   `,
 })
 export class SelectableItemsComponent implements OnInit, OnChanges {
-  @Input() public selectableItems: Array<any>;
-  @Input() public selectedItems: Array<any>;
-  @Input() public listHeight;
-  @Input() public selectableHeader: string = '';
-  @Input() public selectedHeader: string = '';
-  @Output() selectedChanged = new EventEmitter();
-  public selectableFilter = new FormControl();
-  public selectedFilter = new FormControl();
+  @Input() public selectableItems: Array<any>
+  @Input() public selectedItems: Array<any>
+  @Input() public listHeight
+  @Input() public selectableHeader: string = ''
+  @Input() public selectedHeader: string = ''
+  @Output() selectedChanged = new EventEmitter()
+  public selectableFilter = new FormControl()
+  public selectedFilter = new FormControl()
 
   public ngOnInit () {
     this.subscribeToFilterChanges()
@@ -216,11 +217,11 @@ export class SelectableItemsComponent implements OnInit, OnChanges {
 
 // http://stackoverflow.com/questions/25456013/javascript-deepequal-comparison
 function deepEqual (x, y) {
-  if ((typeof x == 'object' && x != null) && (typeof y == 'object' && y != null)) {
-    if (Object.keys(x).length != Object.keys(y).length) {
+  if ((typeof x === 'object' && x != null) && (typeof y === 'object' && y != null)) {
+    if (Object.keys(x).length !== Object.keys(y).length) {
       return false
     }
-    for (var prop in x) {
+    for (let prop in x) {
       if (y.hasOwnProperty(prop)) {
         if (!deepEqual(x[prop], y[prop])) {
           return false
