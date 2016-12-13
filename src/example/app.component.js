@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         // Prepared mock data
@@ -65,14 +65,14 @@ var AppComponent = (function () {
     AppComponent.prototype.selectedChanged = function ($event) {
         console.log($event);
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'selectable-items-example',
-            template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>selectable-items example</h3>\n      <br>\n      <selectable-items\n        [selectableItems]='selectableItems'\n        [selectableHeader]='\"Selectable\"'\n        [selectedItems]='selectedItems'\n        [selectedHeader]='\"Selected\"'\n        [listHeight]='\"150px\"'\n        (selectedChanged)=\"selectedChanged($event)\">\n      </selectable-items>\n    </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'selectable-items-example',
+        template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>selectable-items example</h3>\n      <br>\n      <selectable-items\n        [selectableItems]='selectableItems'\n        [selectableHeader]='\"Selectable\"'\n        [selectedItems]='selectedItems'\n        [selectedHeader]='\"Selected\"'\n        [listHeight]='\"150px\"'\n        (selectedChanged)=\"selectedChanged($event)\">\n      </selectable-items>\n    </div>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

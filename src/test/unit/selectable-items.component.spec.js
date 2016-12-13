@@ -1,6 +1,6 @@
 "use strict";
-var fixtures_1 = require('./fixtures');
-var selectable_items_component_1 = require('../../selectable-items/selectable-items.component');
+var fixtures_1 = require("./fixtures");
+var selectable_items_component_1 = require("../../selectable-items/selectable-items.component");
 describe('CoSelectableItemsCmp', function () {
     it('Should be defined', function () {
         expect(selectable_items_component_1.SelectableItemsComponent).toBeDefined();
