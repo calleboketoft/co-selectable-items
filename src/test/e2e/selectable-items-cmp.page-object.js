@@ -2,18 +2,18 @@
 var VISIBLE_CLASS = 'co-visible';
 var SelectableItemsPageObject = (function () {
     function SelectableItemsPageObject() {
-        this.selectableFilter = element(by.id('co-selectable-items-selectable-filter'));
-        this.selectedFilter = element(by.id('co-selectable-items-selected-filter'));
-        this.selectAllButton = element(by.id('co-selectable-items-select-all'));
-        this.deselectAllButton = element(by.id('co-selectable-items-deselect-all'));
-        this.selectableList = element(by.id('co-selectable-items-selectable-list'));
-        this.selectedList = element(by.id('co-selectable-items-selected-list'));
+        this.selectableFilter = element(by.css('.example1 .co-selectable-items-selectable-filter'));
+        this.selectedFilter = element(by.css('.example1 .co-selectable-items-selected-filter'));
+        this.selectAllButton = element(by.css('.example1 .co-selectable-items-select-all'));
+        this.deselectAllButton = element(by.css('.example1 .co-selectable-items-deselect-all'));
+        this.selectableList = element(by.css('.example1 .co-selectable-items-selectable-list'));
+        this.selectedList = element(by.css('.example1 .co-selectable-items-selected-list'));
     }
     SelectableItemsPageObject.prototype.getSelectableItems = function () {
-        return this.selectableList.all(by.css('li.' + VISIBLE_CLASS));
+        return this.selectableList.all(by.css('.example1 li.' + VISIBLE_CLASS));
     };
     SelectableItemsPageObject.prototype.getSelectedItems = function () {
-        return this.selectedList.all(by.css('li.' + VISIBLE_CLASS));
+        return this.selectedList.all(by.css('.example1 li.' + VISIBLE_CLASS));
     };
     // http://stackoverflow.com/questions/27910331/using-protractor-with-loops
     // return items that matches the filter

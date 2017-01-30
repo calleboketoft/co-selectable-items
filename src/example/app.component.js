@@ -70,7 +70,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'selectable-items-example',
-        template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>selectable-items example</h3>\n      <br>\n      <selectable-items\n        [selectableItems]='selectableItems'\n        [selectableHeader]='\"Selectable\"'\n        [selectedItems]='selectedItems'\n        [selectedHeader]='\"Selected\"'\n        [listHeight]='\"150px\"'\n        (selectedChanged)=\"selectedChanged($event)\">\n      </selectable-items>\n    </div>\n  "
+        template: "\n    <div class='container' style='margin-top: 25px;'>\n      <h3>selectable-items example</h3>\n      <br>\n      <div class=\"example1\">\n        <selectable-items\n          [selectableItems]='selectableItems'\n          [selectableHeader]='\"Selectable\"'\n          [selectedItems]='selectedItems'\n          [selectedHeader]='\"Selected\"'\n          [listHeight]='\"150px\"'\n          (selectedChanged)=\"selectedChanged($event)\">\n        </selectable-items>\n      </div>\n\n      <br><br>\n\n      <h3>hidden filters and batch buttons</h3>\n      <br>\n      <selectable-items\n        [hideBatchButtons]=\"true\"\n        [hideFilters]=\"true\"\n        [selectableItems]='selectableItems'\n        [selectableHeader]='\"Selectable\"'\n        [selectedItems]='selectedItems'\n        [selectedHeader]='\"Selected\"'\n        [listHeight]='\"150px\"'\n        (selectedChanged)=\"selectedChanged($event)\">\n      </selectable-items>\n    </div>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

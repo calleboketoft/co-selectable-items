@@ -6,7 +6,24 @@ import { Component } from '@angular/core'
     <div class='container' style='margin-top: 25px;'>
       <h3>selectable-items example</h3>
       <br>
+      <div class="example1">
+        <selectable-items
+          [selectableItems]='selectableItems'
+          [selectableHeader]='"Selectable"'
+          [selectedItems]='selectedItems'
+          [selectedHeader]='"Selected"'
+          [listHeight]='"150px"'
+          (selectedChanged)="selectedChanged($event)">
+        </selectable-items>
+      </div>
+
+      <br><br>
+
+      <h3>hidden filters and batch buttons</h3>
+      <br>
       <selectable-items
+        [hideBatchButtons]="true"
+        [hideFilters]="true"
         [selectableItems]='selectableItems'
         [selectableHeader]='"Selectable"'
         [selectedItems]='selectedItems'

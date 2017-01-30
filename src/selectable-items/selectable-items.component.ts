@@ -21,15 +21,23 @@ const INVISIBLE_CLASS = 'co-invisible'
     .text-center {
       text-align: center;
     }
+    .list-group-item {
+      border: 0px;
+    }
+    /* http://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class */
+    .list-group > .co-visible ~ .co-visible {
+      border-bottom: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+    }
   `],
   template: `
     <div class="row" *ngIf="selectableHeader || selectedHeader">
-      <div class="col-xs-5">
+      <div [ngClass]="{'col-xs-5': !hideBatchButtons, 'col-xs-6': hideBatchButtons}">
         <h4>{{selectableHeader}}</h4>
       </div>
-      <div class="col-xs-2">
+      <div class="col-xs-2" *ngIf="!hideBatchButtons">
       </div>
-      <div class="col-xs-5">
+      <div [ngClass]="{'col-xs-5': !hideBatchButtons, 'col-xs-6': hideBatchButtons}">
         <h4>{{selectedHeader}}</h4>
       </div>
     </div>
@@ -37,16 +45,14 @@ const INVISIBLE_CLASS = 'co-invisible'
     <div class="row">
 
       <!-- SELECTABLE ITEMS -->
-      <div class="col-xs-5">
+      <div [ngClass]="{'col-xs-5': !hideBatchButtons, 'col-xs-6': hideBatchButtons}">
         <div class="card">
-          <div class="card-header">
-            <input type="text" class="form-control"
-              id="co-selectable-items-selectable-filter"
+          <div class="card-header" [hidden]="hideFilters">
+            <input type="text" class="form-control co-selectable-items-selectable-filter"
               placeholder="Filter"
               [formControl]="selectableFilter">
           </div>
-          <ul class="list-group list-group-flush text-left"
-            id="co-selectable-items-selectable-list"
+          <ul class="list-group list-group-flush text-left co-selectable-items-selectable-list"
             [ngStyle]="{'height': listHeight}">
             <li class="list-group-item"
               *ngFor="let item of selectableItems"
@@ -59,32 +65,28 @@ const INVISIBLE_CLASS = 'co-invisible'
       </div>
 
       <!-- BATCH BUTTONS -->
-      <div class="col-xs-2 text-center">
-        <button type="button" class="btn btn-primary"
-          id="co-selectable-items-select-all"
+      <div class="col-xs-2 text-center" [hidden]="hideBatchButtons">
+        <button type="button" class="btn btn-primary co-selectable-items-select-all"
           (click)="selectAllFiltered()">
           &gt;&gt;
         </button>
         <br><br>
-        <button type="button" class="btn btn-primary"
-          id="co-selectable-items-deselect-all"
+        <button type="button" class="btn btn-primary co-selectable-items-deselect-all"
           (click)="deselectAllFiltered()">
           &lt;&lt;
         </button>
       </div>
 
       <!-- SELECTED ITEMS -->
-      <div class="col-xs-5">
+      <div [ngClass]="{'col-xs-5': !hideBatchButtons, 'col-xs-6': hideBatchButtons}">
         <div class="card">
-          <div class="card-header">
-            <input type="text" class="form-control"
-              id="co-selectable-items-selected-filter"
+          <div class="card-header" [hidden]="hideFilters">
+            <input type="text" class="form-control co-selectable-items-selected-filter"
               placeholder="Filter"
               [formControl]="selectedFilter">
           </div>
-            <ul class="list-group list-group-flush text-left"
-              id="co-selectable-items-selected-list"
-              [ngStyle]="{'height':listHeight}">
+            <ul class="list-group list-group-flush text-left co-selectable-items-selected-list"
+              [ngStyle]="{'height': listHeight}">
             <li class="list-group-item"
               *ngFor="let item of selectableItems"
               [ngClass]="getDisplayClass(item, 'selected')"
@@ -99,6 +101,8 @@ const INVISIBLE_CLASS = 'co-invisible'
   `
 })
 export class SelectableItemsComponent implements OnInit, OnChanges {
+  @Input() public hideFilters: boolean = false
+  @Input() public hideBatchButtons: boolean = false
   @Input() public selectableItems: Array<any>
   @Input() public selectedItems: Array<any>
   @Input() public listHeight
