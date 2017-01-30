@@ -1,10 +1,10 @@
 // globals from protractor
-declare var describe:any
-declare var it:any
-declare var expect:any
-declare var beforeEach:any
-declare var browser:any
-declare var by:any
+declare var describe: any
+declare var it: any
+declare var expect: any
+declare var beforeEach: any
+declare var browser: any
+declare var by: any
 
 import { SelectableItemsPageObject } from './selectable-items-cmp.page-object'
 

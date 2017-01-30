@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'selectable-items-example',
-  template:`
+  template: `
     <div class='container' style='margin-top: 25px;'>
       <h3>selectable-items example</h3>
       <br>
