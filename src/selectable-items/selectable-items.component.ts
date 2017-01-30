@@ -131,7 +131,7 @@ export class SelectableItemsComponent implements OnInit, OnChanges {
 
   public filterSelectable (items, value) {
     items.forEach((item) => {
-      item.filteredOutSelectable =  !this.filterItem(item.displayName, value)
+      item.filteredOutSelectable = !this.filterItem(item.displayName, value)
     })
   }
 
