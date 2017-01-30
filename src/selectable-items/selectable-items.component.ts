@@ -96,7 +96,7 @@ const INVISIBLE_CLASS = 'co-invisible'
       </div>
 
     </div>
-  `,
+  `
 })
 export class SelectableItemsComponent implements OnInit, OnChanges {
   @Input() public selectableItems: Array<any>
@@ -145,7 +145,7 @@ export class SelectableItemsComponent implements OnInit, OnChanges {
     let selectableLength = this.selectableItems.length
     let i
     for (i = 0; i < selectableLength; i++) {
-      var selectableItem = this.selectableItems[i]
+      let selectableItem = this.selectableItems[i]
       selectableItem.filteredOutSelected = false
       selectableItem.filteredOutSelectable = false
       selectableItem.selected = this.selectedItems.some((selectedItem) => {
