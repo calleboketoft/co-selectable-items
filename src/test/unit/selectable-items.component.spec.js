@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var fixtures_1 = require("./fixtures");
 var selectable_items_component_1 = require("../../selectable-items/selectable-items.component");
 describe('CoSelectableItemsCmp', function () {

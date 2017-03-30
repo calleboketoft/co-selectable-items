@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var selectable_items_cmp_page_object_1 = require("./selectable-items-cmp.page-object");
 describe('SelectableItems', function () {
     beforeEach(function () {

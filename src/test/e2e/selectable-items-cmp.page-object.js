@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var VISIBLE_CLASS = 'co-visible';
 var SelectableItemsPageObject = (function () {
     function SelectableItemsPageObject() {

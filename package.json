@@ -1,6 +1,6 @@
 {
   "name": "@calle/ng2-selectable-items",
-  "version": "1.1.0",
+  "version": "4.0.0",
   "main": "index.js",
   "scripts": {
     "build": "npm run typescript && npm run install_webdriver",
@@ -13,31 +13,32 @@
     "watch": "tsc -w"
   },
   "peerDependencies": {
-    "@angular/core": "^2.4.3",
-    "@angular/forms": "^2.4.3"
+    "@angular/core": "^4.0.1",
+    "@angular/forms": "^4.0.1"
   },
   "devDependencies": {
-    "@angular/common": "2.4.3",
-    "@angular/compiler": "2.4.3",
-    "@angular/core": "2.4.3",
-    "@angular/forms": "2.4.3",
-    "@angular/platform-browser": "2.4.3",
-    "@angular/platform-browser-dynamic": "2.4.3",
+    "@angular/common": "4.0.1",
+    "@angular/compiler": "4.0.1",
+    "@angular/core": "4.0.1",
+    "@angular/forms": "4.0.1",
+    "@angular/platform-browser": "4.0.1",
+    "@angular/platform-browser-dynamic": "4.0.1",
+    "@types/jasmine": "2.5.47",
     "bootstrap": "4.0.0-alpha.5",
-    "express": "4.14.0",
+    "express": "4.15.2",
     "gulp": "3.9.1",
     "jasmine-core": "2.5.2",
-    "karma": "1.4.0",
+    "karma": "1.5.0",
     "karma-chrome-launcher": "2.0.0",
     "karma-jasmine": "1.1.0",
     "karma-systemjs": "0.16.0",
-    "protractor": "5.0.0",
-    "reflect-metadata": "0.1.9",
-    "rxjs": "5.0.3",
+    "protractor": "5.1.1",
+    "reflect-metadata": "0.1.10",
+    "rxjs": "5.2.0",
     "systemjs": "0.19.42",
-    "tslint-config-standard": "2.0.0",
-    "typescript": "2.1.5",
-    "zone.js": "0.7.6"
+    "tslint-config-standard": "4.0.0",
+    "typescript": "2.2.2",
+    "zone.js": "0.8.5"
   },
   "keywords": [
     "angular2"

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function fixtures() {
     return {
         initSelectable: [
@@ -503,6 +504,5 @@ function fixtures() {
         }
     };
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = fixtures;
 //# sourceMappingURL=fixtures.js.map
